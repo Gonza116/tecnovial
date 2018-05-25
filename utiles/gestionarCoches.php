@@ -30,10 +30,21 @@
     function actualizarRepostaje($conexion, $id_coche, $repostaje){
         try{
             $repostaje_format = getFechaFormateada($repostaje);
-            $stmt = $conexion->prepare("CALL ACTUALIZAR_REPOSTAJE(:id, :repo)");
-            $stmt->bindParam(':id', $id_coche);
-            $stmt->bindParam(':repo', $repostaje_format);
-            $stmt->execute();
+            $ultimo_repostaje_antes_pdo = ultimoRepostaje($conexion, $id_coche);
+            foreach($ultimo_repostaje_antes_pdo as $u){
+                $ultimo_repostaje_antes = $u[0];
+            }
+
+            if(date_create_from_format("d/m/y", $ultimo_repostaje_antes) > date_create_from_format("d/m/Y", $repostaje_format)){
+                $error = "La fecha del nuevo repostaje tiene que ser posterior al ultimo repostaje";
+                return $error;
+            } else {
+                $stmt = $conexion->prepare("CALL ACTUALIZAR_REPOSTAJE(:id, :repo)");
+                $stmt->bindParam(':id', $id_coche);
+                $stmt->bindParam(':repo', $repostaje_format);
+                $stmt->execute();
+                return "";
+            }
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             header("Location: excepcion.php");
@@ -43,11 +54,21 @@
     function actualizarITV($conexion, $id_coche, $itv){
         try{
             $itv_format = getFechaFormateada($itv);
-            $ultima_itv_antes = ultimaITV($conexion, $id_coche);
-            $stmt = $conexion->prepare("CALL ACTUALIZAR_ITV(:id, :itv)");
-            $stmt->bindParam(':id', $id_coche);
-            $stmt->bindParam(':itv', $itv_format);
-            $stmt->execute();
+            $ultima_itv_antes_pdo = ultimaITV($conexion, $id_coche);
+            foreach($ultima_itv_antes_pdo as $u){
+                $ultima_itv_antes = $u[0];
+            }
+
+            if(date_create_from_format("d/m/y", $ultima_itv_antes) > date_create_from_format("d/m/Y", $itv_format)){
+                $error = "La fecha de la nueva ITV tiene que ser posterior a la última ITV";
+                return $error;
+            } else {
+                $stmt = $conexion->prepare("CALL ACTUALIZAR_ITV(:id, :itv)");
+                $stmt->bindParam(':id', $id_coche);
+                $stmt->bindParam(':itv', $itv_format);
+                $stmt->execute();  
+                return "";
+            }
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             return $e->getMessage();
@@ -80,10 +101,6 @@
         try{
             $consulta = "SELECT * FROM COCHES WHERE NUM_COCHE = " . $id_coche;
             return $conexion->query($consulta);
-            //$stmt = $conexion->prepare("SELECT * FROM COCHES WHERE NUM_COCHE = :id_coche");
-            //$stmt->bindParam(":id_coche", $id_coche);
-            //$stmt->execute();
-            //return $stmt->fetchAll();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             header("Location: excepcion.php");
@@ -92,12 +109,28 @@
 
     function ultimaITV($conexion, $id_coche){
         try{
-            //$consulta = "SELECT ULTIMA_ITV FROM COCHES WHERE NUM_COCHE = " . $id_coche;
-            //return $conexion->query($consulta);
-            $stmt = $conexion->prepare("SELECT ULTIMA_ITV FROM COCHES WHERE NUM_COCHE = :id_coche");
-            $stmt->bindParam(":id_coche", $id_coche);
-            $stmt->execute();
-            return $stmt->fetch();
+            $consulta = "SELECT ULTIMA_ITV FROM COCHES WHERE NUM_COCHE = " . $id_coche;
+            return $conexion->query($consulta);
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
+    function ultimoRepostaje($conexion, $id_coche){
+        try{
+            $consulta = "SELECT ULTIMO_REPOSTAJE FROM COCHES WHERE NUM_COCHE = " . $id_coche;
+            return $conexion->query($consulta);
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
+    function consultarMatriculas($conexion){
+        try{
+            $consulta = "SELECT MATRICULA FROM COCHES";
+            return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             header("Location: excepcion.php");

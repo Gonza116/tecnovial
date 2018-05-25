@@ -39,19 +39,19 @@
     
     if($hayErrores) { ?>
         <form action="../acciones/accion_anadir_alumno.php" method="post" onsubmit="return validarFormulario();">
-            <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" value= "<?php $alumno_mal['nombre']?>" required></p>
-            <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" value= "<?php $alumno_mal['apellidos']?>" required></p>
-            <p>DNI: <input type="text" name="alum_DNI" id="alum_DNI" required value= "<?php $alumno_mal['DNI']?>" oninput="validarDNI();"></p>
-            <p>Fecha de nacimiento: <input type="date" name="alum_fecha_nac" id="alum_fecha_nac" value= "<?php $alumno_mal['fecha_nac']?>" required></p>
-            <p>Fecha de matriculación: <input type="date" name="alum_fecha_mat" id="alum_fecha_mat" value= "<?php $alumno_mal['fecha_mat']?>" required></p>
-            <p>Teléfono: <input type="text" name="alum_telefono" id="alum_telefono" value= "<?php $alumno_mal['telefono']?>" oninput="validarTelefono()"></p>
+            <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" value= "<?php echo $alumno_mal['nombre']?>" required></p>
+            <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" value= "<?php echo $alumno_mal['apellidos']?>" required></p>
+            <p>DNI: <input type="text" name="alum_DNI" id="alum_DNI" required value= "<?php echo $alumno_mal['DNI']?>" oninput="validarDNI();"></p>
+            <p>Fecha de nacimiento: <input type="date" name="alum_fecha_nac" id="alum_fecha_nac" value= "<?php echo $alumno_mal['fecha_nac']?>" required></p>
+            <p>Fecha de matriculación: <input type="date" name="alum_fecha_mat" id="alum_fecha_mat" value= "<?php echo $alumno_mal['fecha_mat']?>" required></p>
+            <p>Teléfono: <input type="text" name="alum_telefono" id="alum_telefono" value= "<?php echo $alumno_mal['telefono']?>" oninput="validarTelefono()"></p>
             <p>Restricciones: <input type="text" name="alum_rest" id="alum_rest"></p>
             <p>Estudios: <input type="radio" name="alum_estudios" id="alum_estudios0" value="BASICOS" required>Básicos<br>
                          <input type="radio" name="alum_estudios" id="alum_estudios1" value="SECUNDARIOS">Secundarios<br>
                          <input type="radio" name="alum_estudios" id="alum_estudios2" value="FORMACION PROFESIONAL">Formación Profesional<br>
                          <input type="radio" name="alum_estudios" id="alum_estudios3" value="UNIVERSITARIOS">Universitarios</p>
-            <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" value= "<?php $alumno_mal['domicilio']?>" required></p>
-            <p>Oportunidades: <input type="number" name="alum_opor" id="alum_opor" value= "<?php $alumno_mal['opor']?>" min="0" max="3" required></p>
+            <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" value= "<?php echo $alumno_mal['domicilio']?>" required></p>
+            <p>Oportunidades: <input type="number" name="alum_opor" id="alum_opor" value= "<?php echo $alumno_mal['opor']?>" min="0" max="3" required></p>
             <p>Código de amigo (si se aplica): <select name="alum_amigo" id="alum_amigo">
                 <?php foreach($alumnos as $alumno) { ?>
                     <option value="<?php echo $alumno['NUM_ALUM'] ?>"><?php echo $alumno['APELLIDOS'] ?>, <?php echo $alumno['NOMBRE'] ?></option>

@@ -27,6 +27,11 @@
         
         if(isset($error)){
             $_SESSION['error'] = $error;
+            $coche['matricula'] = $_REQUEST['matricula'];
+            $coche['kms'] = $_REQUEST['kms'];
+            $coche['itv'] = $_REQUEST['itv'];
+            $coche['repostaje'] = $_REQUEST['repostaje'];
+            $_SESSION['coche_mal'] = $coche;
             header("Location: ../anadir/anadir_coche.php");
         } else {
             anadirCoche($conexion, $_REQUEST['matricula'], $_REQUEST['itv'], $_REQUEST['kms'], $_REQUEST['repostaje']);
