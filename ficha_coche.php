@@ -59,7 +59,7 @@
             <form action="ficha_coche.php">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
                 <input type="date" name="fecha_nueva_itv" />
-                <input type="submit" value="Actualizar fecha" />
+                <input type="submit" value="Actualizar fecha" onfocus="notificationITVAnterior();" />
             </form>
         
     </fieldset>
@@ -70,7 +70,7 @@
             <form action="ficha_coche.php">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
                 <input type="date" name="fecha_nuevo_repostaje" />
-                <input type="submit" value="Actualizar fecha" onfocus="notificationITVAnterior();"/>
+                <input type="submit" value="Actualizar fecha" onfocus="notificationRepAnterior();"/>
             </form>
         
     </fieldset>
