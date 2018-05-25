@@ -14,9 +14,9 @@ html{
 
 #anadir_prof {
    position: fixed;
-   margin-bottom: 55px;
+   margin-bottom: 30px;
    bottom: 0;
-   left: 45%;
+   left: 43%;
    text-decoration: none;
    text-align: center;
    font-family: "Candara";
@@ -26,10 +26,12 @@ html{
    padding: 5px;
    border-color: aliceblue;
    opacity: 0.6;
+   
 }
 
 a {	
  	text-decoration: none;
+    color: midnightblue;
 }
 
 #cerrar {
@@ -59,19 +61,17 @@ a {
    position: relative;
    margin-top: 30px;
    top: 40%;
-   left: 44.5%;
+   left: 41%;
    right: 45%;
    text-decoration: none;
    text-align: center;
    font-family: "Candara";
    border: 1px solid;
-   border-top-left-radius: 8px;
-   border-top-right-radius: 8px;
+   border-radius: 8px;
    background-color: aliceblue;
-   padding-left: 14px;
-   padding-right: 14px;
+   padding: 5px;
    border-color: aliceblue;
-   opacity: 0.6;
+   opacity: 0.75;
     
 }
 

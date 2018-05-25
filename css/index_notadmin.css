@@ -71,7 +71,7 @@ html{
    position: relative;
    margin-top: 30px;
    top: 40%;
-   left: 45%;
+   left: 41%;
    right: 45%;
    text-decoration: none;
    text-align: center;
@@ -81,5 +81,5 @@ html{
    background-color: aliceblue;
    padding: 5px;
    border-color: aliceblue;
-   opacity: 0.6;
+   opacity: 0.75;
 }

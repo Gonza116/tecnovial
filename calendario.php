@@ -20,8 +20,8 @@
 <body id="formulario">
     <?php include_once("./cabecera.php");
     ?>
-    <a href="calendario-examenes.php"> Cambiar a exámenes</a>
-    <h1>Calendario de Clases*</h1>
+    <a href="calendario-examenes.php"><img src="./images/examen.png"></a>
+    <h1 id="titulo">Calendario de Clases*</h1>
     <table> 
     <tr>
         <th>Fecha</th>
@@ -30,9 +30,9 @@
     </tr>
     <?php foreach($clases as $c){ ?>
     <tr>
-        <td><?php echo $c['FECHA'] ?></td>
-        <td><?php echo $c['NOMBRE'] . " " . $c['APELLIDOS'] ?></td>
-        <td><?php echo $c['MATRICULA'] ?></td>
+        <td id="fecha_cl"><?php echo $c['FECHA'] ?></td>
+        <td id="alumno_cl"><?php echo $c['NOMBRE'] . " " . $c['APELLIDOS'] ?></td>
+        <td id="coche_cl"><?php echo $c['MATRICULA'] ?></td>
     </tr>
     <?php } ?>
     </table>

@@ -29,7 +29,7 @@ ul.topnav { /*AL PONER UL, ESTAMOS ACOTANDO A LOS TOPNAV QUE SEAN SOLO DE LA CLA
 
 ul.topnav input {
     width: 100%;
-    background-color: #e5fdff;
+    background-color: #005092;
     border: none;
     padding: 3px;
 }
@@ -41,8 +41,8 @@ ul.topnav li input {
     transition: 0.3s;
     font-size: 13px;
     font-family: "Candara";
-    color: #525252;
-	text-shadow: 3px 3px 3px #007681;
+    color: white;
+	text-shadow: 3px 3px 3px #000000;
 }
 
 ul.topnav li.icon {
@@ -50,7 +50,7 @@ ul.topnav li.icon {
 }
 
 ul.topnav li input:hover {
-    background-color: #97dbe2;
+    background-color: #0073d2;
 }
 
 @media screen and (max-width:680px) {

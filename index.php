@@ -57,12 +57,15 @@
     <title>Tecnovial</title>
     <meta charset="utf-8">
     <script src="js/validacion-profesor.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index_admin.css">
+    <link rel="stylesheet" type="text/css" href="./css/index_notadmin.css">
 </head>
 <body>
     
     <?php 
     foreach($profesores as $profesor){ 
-    ?>
+    ?> 
+    <div id="profes_pass">
     <form action="index.php" method="post">
         <p><?php echo $profesor['APELLIDOS'] ?>, <?php echo $profesor['NOMBRE'] ?></p>
         <input type="number" value="<?php echo $profesor['NUM_PROF'] ?>" name="profesor_id" hidden>
@@ -90,30 +93,37 @@
                 <p>Contraseña: <input type="password" name="profesor_pass" id="profesor_pass" required
                 placeholder="Mínimo 8 caracteres entre letras y dígitos" oninput="passwordValidation();"></p>
                 <?php }}} ?>
-        <input type="submit" value="Log-in">
-    </form>
-    <?php if($adminok){ ?>
+        <input id="log_b" type="submit" value="Log-in"><br>
+        <?php if($adminok){ ?>
+    
         <form action="index.php" method="get">
             <input type="text" name="borrar_prof_id" value="<?php echo $profesor['NUM_PROF'] ?>" hidden>
-            <input type="submit" name="borrar_prof" value="Borrar profesor">
+            <input id="del_b" type="submit" name="borrar_prof" value="Borrar profesor">
         </form>
     <?php } ?>
+    </form></div><br>
     <?php } ?>
     <?php if($adminok){ ?>
-    <a href="anadir/anadir_profesor.php">+ Añadir profesor</a>
+    <div id="anadir_prof">
+    <a href="anadir/anadir_profesor.php">+ Añadir profesor</a><br>
     <a href="utiles/cerrarsesion.php">Abandonar modo admin</a>
+        </div>
     <?php } ?>
     <?php if(!$admintry) { ?>
     <form action="index.php" method="post">
-        <input type="submit" name="admin-wanna-log" value="Log-in como admin">
+        <div id="log_ad">
+        <input id="log_b" type="submit" name="admin-wanna-log" value="Log-in como admin"></div>
     </form>
     <?php } else if (!$adminok) { ?>
+    
     <form action="index.php" method="post">
-        <p>Código de administrador: <input type="password" name="adminpass"> <input type="submit" value="Enviar"></p>
+        <div  id="cod_ad">
+        <p>Código de administrador: <br><input type="password" name="adminpass"><br><br><input id="log_b" type="submit" value="Enviar"></p>
         <?php if($adminfail){ ?>
         <p><strong>Código incorrecto</strong></p>
-        <?php } ?>
+        <?php } ?></div>
     </form>
+        
     <?php } ?>
 </body>
 </html>

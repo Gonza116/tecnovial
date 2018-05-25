@@ -3,6 +3,15 @@
     src: url('../fonts/Candara.ttf'); /*URL to font*/
 }
 
+@font-face {
+    font-family: 'Gothic'; /*a name to be used later*/
+    src: url('../fonts/Gothic.ttf'); /*URL to font*/
+}
+
+html {
+    background-image: url(../images/tecno.png);
+}
+
 
 #ex_p {
     float: left;
@@ -18,64 +27,83 @@
     width: 30%;
     text-align: center; 
     padding: 10px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid transparent;
     font-family: "Candara";
 }
 
 #titulo {
     font-family: "Candara";
+    color: #2a2a2a;
+    margin-left: 20px;
 }
 
-#fecha2 {
-    font-family: "Candara";
+#fecha_cl {
+    font-family: "Gothic";
+    color: #2a2a2a;
 }
 
-#alumno2 {
+#alumno_cl {
     font-family: "Candara";
+    color: #2a2a2a;
 }
 
-#coche {
-    font-family: "Candara";
+#coche_cl {
+    font-family: "Gothic";
+    color: #2a2a2a;
 }
 
-#tabla_datos {
+#ex {
     font-family: "Candara";
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 table {
-    background-color: bisque;
 }
 
 #alumno {
     width: 70%;
     text-align: center;
-    border-bottom: 1px solid black;
     font-family: "Candara";
 }
 
 td {
     text-align: center;
-    border-right: 1px solid black;
+    border-right: 1px solid transparent;
     padding: 10px;
+    background-color: bisque;
+    opacity: 0.8;
 }
 
 th {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     padding-bottom: 10px;
     padding-top: 10px;
+    font-family: "Candara";
+    color: #2a2a2a;
+    background-color: bisque;
+    opacity: 0.8;
 }
 
 table {
     width: 100%;
-    border: 1px solid black;
-    border-collapse: collapse;
+    border-collapse: separate;
+	border-spacing: 2px;
+	border: 1px solid transparent;
 }
 
 a {
     float: right;
-    margin-right: 10px;
+    margin-right: 50px;
     margin-top: 10px;
+    text-decoration: none;
+}
+
+p {
+    font-family: "Candara";
+    color: #2a2a2a;
 }
 
