@@ -10,18 +10,19 @@
 <head>
     <title> Calendario</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/calendario.css">
 </head>
     
 <body>
     <?php include_once("./cabecera.php"); ?>
     <a href="calendario.php">Cambiar a clases</a>
     <h1>Calendario de Exámenes</h1>
-    <fieldset>
+    <div id="ex_t">
         <legend>Exámenes teóricos</legend>
         <table> 
         <tr>
-            <th>Fecha</th>
-            <th>Alumno</th>
+            <th id="fecha">Fecha</th>
+            <th id="alumno">Alumno</th>
         </tr>
         <?php foreach($examenesTeoricos as $et){ ?>
         <tr>
@@ -30,8 +31,8 @@
         </tr>
         <?php } ?>
         </table>
-    </fieldset>
-    <fieldset>
+        </div>
+    <div id="ex_p">
         <legend>Examenes prácticos</legend>
         <table> 
         <tr>
@@ -45,7 +46,7 @@
         </tr>
         <?php } ?>
         </table>
-    </fieldset>
+        </div>
     </body>
     
     
