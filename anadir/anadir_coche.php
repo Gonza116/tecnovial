@@ -23,6 +23,7 @@
 <head>
     <title>Tecnovial: Añadiendo nuevo coche</title>
     <meta charset="utf-8">
+    <script src="../js/validacion_coche.js"></script>
 </head>
 <body>
     <?php if($hayErrores){ ?>
@@ -37,9 +38,9 @@
     if($error_sesion){ ?>
         <fieldset>
         <legend>Añadir nuevo coche</legend>
-        <form action="../acciones/accion_anadir_coche.php">
+        <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
             <p>
-                Matrícula: <input type="text" name="matricula" value="<?php echo $coche_mal['matricula'] ?>"/> 
+                Matrícula: <input type="text" name="matricula" id="matricula" value="<?php echo $coche_mal['matricula'] ?>"/> <div id="div_matricula"></div>
                 Kilometraje: <input type="number" name="kms" value="<?php echo $coche_mal['kms'] ?>" />
                 Último repostaje: <input type="date" name="repostaje" value="<?php echo $coche_mal['repostaje'] ?>" />
                 Última ITV: <input type="date" name="itv" value="<?php echo $coche_mal['itv'] ?>" />
@@ -50,9 +51,9 @@
     <?php } else { ?>
         <fieldset>
         <legend>Añadir nuevo coche</legend>
-        <form action="../acciones/accion_anadir_coche.php">
+        <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
             <p>
-                Matrícula: <input type="text" name="matricula" /> 
+                Matrícula: <input type="text" name="matricula"id="matricula" /> <div id="div_matricula"></div>
                 Kilometraje: <input type="number" name="kms" value="0" />
                 Último repostaje: <input type="date" name="repostaje" />
                 Última ITV: <input type="date" name="itv" />

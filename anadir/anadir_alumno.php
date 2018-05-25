@@ -39,8 +39,8 @@
     
     if($hayErrores) { ?>
         <form action="../acciones/accion_anadir_alumno.php" method="post" onsubmit="return validarFormulario();">
-            <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" value= "<?php echo $alumno_mal['nombre']?>" required></p>
-            <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" value= "<?php echo $alumno_mal['apellidos']?>" required></p>
+            <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" value= "<?php echo $alumno_mal['nombre']?>" required></p><div id="div_nombre"></div>
+            <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" value= "<?php echo $alumno_mal['apellidos']?>" required></p><div id="div_apellidos"></div>
             <p>DNI: <input type="text" name="alum_DNI" id="alum_DNI" required value= "<?php echo $alumno_mal['DNI']?>" oninput="validarDNI();"></p>
             <p>Fecha de nacimiento: <input type="date" name="alum_fecha_nac" id="alum_fecha_nac" value= "<?php echo $alumno_mal['fecha_nac']?>" required></p>
             <p>Fecha de matriculación: <input type="date" name="alum_fecha_mat" id="alum_fecha_mat" value= "<?php echo $alumno_mal['fecha_mat']?>" required></p>
@@ -50,7 +50,7 @@
                          <input type="radio" name="alum_estudios" id="alum_estudios1" value="SECUNDARIOS">Secundarios<br>
                          <input type="radio" name="alum_estudios" id="alum_estudios2" value="FORMACION PROFESIONAL">Formación Profesional<br>
                          <input type="radio" name="alum_estudios" id="alum_estudios3" value="UNIVERSITARIOS">Universitarios</p>
-            <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" value= "<?php echo $alumno_mal['domicilio']?>" required></p>
+            <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" value= "<?php echo $alumno_mal['domicilio']?>" required></p><div id="div_domicilio"></div>
             <p>Oportunidades: <input type="number" name="alum_opor" id="alum_opor" value= "<?php echo $alumno_mal['opor']?>" min="0" max="3" required></p>
             <p>Código de amigo (si se aplica): <select name="alum_amigo" id="alum_amigo">
                 <?php foreach($alumnos as $alumno) { ?>
@@ -62,8 +62,8 @@
     </form>
     <?php } else { ?>
         <form action="../acciones/accion_anadir_alumno.php" method="post" onsubmit="return validarFormulario();">
-        <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" required></p>
-        <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" required></p>
+        <p>Nombre: <input type="text" name="alum_nombre" id="alum_nombre" required></p><div id="div_nombre"></div>
+        <p>Apellidos: <input type="text" name="alum_apellidos" id="alum_apellidos" required></p><div id="div_apellidos"></div>
         <p>DNI: <input type="text" name="alum_DNI" id="alum_DNI" required oninput="validarDNI();"></p>
         <p>Fecha de nacimiento: <input type="date" name="alum_fecha_nac" id="alum_fecha_nac" required></p>
         <p>Fecha de matriculación: <input type="date" name="alum_fecha_mat" id="alum_fecha_mat" required></p>
@@ -73,7 +73,7 @@
                      <input type="radio" name="alum_estudios" id="alum_estudios1" value="SECUNDARIOS">Secundarios<br>
                      <input type="radio" name="alum_estudios" id="alum_estudios2" value="FORMACION PROFESIONAL">Formación Profesional<br>
                      <input type="radio" name="alum_estudios" id="alum_estudios3" value="UNIVERSITARIOS">Universitarios</p>
-        <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" required></p>
+        <p>Domicilio: <input type="text" name="alum_domicilio" id="alum_domicilio" required></p><div id="div_domicilio"></div>
         <p>Oportunidades: <input type="number" name="alum_opor" id="alum_opor" value="3" min="0" max="3" required></p>
         <p>Código de amigo (si se aplica): <select name="alum_amigo" id="alum_amigo">
             <?php foreach($alumnos as $alumno) { ?>

@@ -41,8 +41,8 @@
     </fieldset>
     <?php } ?>
     <form action="../acciones/accion_anadir_profesor.php" onsubmit="return validarFormulario();">
-        <p>Nombre: <input type="text" name="nuevoProfesor_nombre" id="nuevoProfesor_nombre" required></p>
-        <p>Apellidos: <input type="text" name="nuevoProfesor_apellidos" id="nuevoProfesor_apellidos" required></p>
+        <p>Nombre: <input type="text" name="nuevoProfesor_nombre" id="nuevoProfesor_nombre" required></p><div id="div_nombre"></div>
+        <p>Apellidos: <input type="text" name="nuevoProfesor_apellidos" id="nuevoProfesor_apellidos" required></p><div id="div_apellidos"></div>
         <p>Contraseña: <input type="password" name="nuevoProfesor_pass" id="nuevoProfesor_pass" required placeholder="Mínimo 8 caracteres entre letras y dígitos" oninput="passwordValidation();"></p>
         <p>Repetir contraseña: <input type="password" name="nuevoProfesor_passrep" id="nuevoProfesor_passrep" required oninput="passwordConfirmation();"></p>
         <!-- php if($fail_pass){ ?>

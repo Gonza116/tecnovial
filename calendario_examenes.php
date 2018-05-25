@@ -11,12 +11,24 @@
     <title> Calendario</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/calendario.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script>
+        function fechaHoy() {
+            var fecha = new Date();
+            var mes = fecha.getMonth() + 1;
+            
+        $(document).ready(function(){
+            $("#fecha_hoy").append( "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>");
+        })
+        }
+    </script>
 </head>
     
-<body>
+<body onload="fechaHoy();">
     <?php include_once("./cabecera.php"); ?>
     <a href="calendario.php"><img src="./images/car.png"></a>
     <h1 id="titulo">Calendario de Exámenes</h1>
+    <div id="fecha_hoy"></div>
     <div id="ex_t">
         <legend id="ex">Exámenes teóricos</legend>
         <table> 

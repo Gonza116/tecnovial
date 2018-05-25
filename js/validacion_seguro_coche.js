@@ -1,5 +1,5 @@
 function validarFormulario() {
-   var coste = document.getElementById("coste").value;
+   var coste = document.getElementById("costeSeguroLocal").value;
    var costeOk = coste.replace(" ","");
    var patron = /[a-zA-Z]/;
     var res = true;

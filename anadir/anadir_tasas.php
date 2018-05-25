@@ -39,7 +39,7 @@
             </select>
         </p>
         <p>Fecha del cobro: <input type="date" name="fecha" required /></p>
-        <p>Precio de las tasas: <input type="text" name="coste" id="coste_tasas" required/></p>
+        <p>Precio de las tasas: <input type="text" name="coste" id="coste_tasas" required/></p><div id="div_costeTasas"></div>
         <p><input type="submit" value="Añadir" /> <input type="reset" value="Limpiar" /></p>
     </form>
 </body>
