@@ -43,12 +43,16 @@
     <title>Tecnovial: Gestión</title>
     <meta charset="utf-8">
     <script src="js/notificaciones.js" type="text/javascript"></script>
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script>
         function fechaHoy() {
             var fecha = new Date();
             var mes = fecha.getMonth() + 1;
-            document.getElementById('fecha_hoy').innerHTML = "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>";
-    }
+            
+        $(document).ready(function(){
+            $("#fecha_hoy").append( "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>");
+        })
+        }
     </script>
 </head>
 <body onload="fechaHoy();">

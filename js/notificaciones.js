@@ -154,52 +154,55 @@ function notificationTasas() {
 function notificationITVAnterior() {
     var fecha_itv = document.getElementById("ult_itv").value.split("/");
     var fecha_nueva_itv = document.getElementById("fecha_nueva_itv").value.split("-");
+    var res = true;
     
     fecha_itv = new Date(parseInt(fecha_itv[2]),parseInt(fecha_itv[1]-1),parseInt(fecha_itv[0]));
     fecha_nueva_itv = new Date(parseInt(fecha_nueva_itv[0]),parseInt(fecha_nueva_itv[1]-1),parseInt(fecha_nueva_itv[2]));
-    var error = "";
     
     fecha_itv.setFullYear(fecha_itv.getFullYear() + 100);
     fecha_itv.setDate(fecha_itv.getDate() + 1);
-    console.info(fecha_nueva_itv);
-    console.info(fecha_itv);
     
     if(fecha_itv.getFullYear() == fecha_nueva_itv.getFullYear()) {
             if(fecha_itv.getMonth() == fecha_nueva_itv.getMonth()) {
                 if (fecha_itv.getDate() > fecha_nueva_itv.getDate()){
-                    error = window.alert('¡La ITV actualizada no puede ser menor que la anterior!');
+                    document.getElementById("div_fecha_nueva_itv").innerHTML = '<p>¡La ITV actualizada no puede ser menor que la anterior!</p>'
+                    res = false;
             }
         } else if (fecha_itv.getMonth() > fecha_nueva_itv.getMonth()) {
-            error = window.alert('¡La ITV actualizada no puede ser menor que la anterior!');
+            document.getElementById("div_fecha_nueva_itv").innerHTML = '<p>¡La ITV actualizada no puede ser menor que la anterior!</p>'
+            res = false;
         }
     } else if (fecha_itv.getFullYear() > fecha_nueva_itv.getFullYear()) {
-        error = window.alert('¡La ITV actualizada no puede ser menor que la anterior!');
+        document.getElementById("div_fecha_nueva_itv").innerHTML = '<p>¡La ITV actualizada no puede ser menor que la anterior!</p>'
+        res = false;
     }
+    return res;
 }
 
 function notificationRepAnterior() {
     var fecha_rep = document.getElementById("ult_rep").value.split("/");
     var fecha_nuevo_rep = document.getElementById("fecha_nuevo_repostaje").value.split("-");
+    var res = true;
     
     fecha_rep = new Date(parseInt(fecha_rep[2]),parseInt(fecha_rep[1]-1),parseInt(fecha_rep[0]));
     fecha_nuevo_rep = new Date(parseInt(fecha_nuevo_rep[0]),parseInt(fecha_nuevo_rep[1]-1),parseInt(fecha_nuevo_rep[2]));
-    var error = "";
     
     fecha_rep.setFullYear(fecha_rep.getFullYear() + 100);
     fecha_rep.setDate(fecha_rep.getDate() + 1);
-    console.info(fecha_nuevo_rep);
-    console.info(fecha_rep);
-    
+                 
     if(fecha_rep.getFullYear() == fecha_nuevo_rep.getFullYear()) {
             if(fecha_rep.getMonth() == fecha_nuevo_rep.getMonth()) {
                 if (fecha_rep.getDate() > fecha_nuevo_rep.getDate()){
-                    error = window.alert('¡La fecha del repostaje actualizada no puede ser menor que la anterior!');
+                    document.getElementById("div_fecha_nuevo_rep").innerHTML = '<p>¡La fecha del repostaje actualizada no puede ser menor que la anterior!</p>'
+                    res = false;
             }
         } else if (fecha_rep.getMonth() > fecha_nuevo_rep.getMonth()) {
-            error = window.alert('¡La fecha del repostaje actualizada no puede ser menor que la anterior!');
+                    document.getElementById("div_fecha_nuevo_rep").innerHTML = '<p>¡La fecha del repostaje actualizada no puede ser menor que la anterior!</p>'
+                    res = false;
         }
     } else if (fecha_rep.getFullYear() > fecha_nuevo_rep.getFullYear()) {
-        error = window.alert('¡La fecha del repostaje actualizada no puede ser menor que la anterior!');
+                    document.getElementById("div_fecha_nuevo_rep").innerHTML = '<p>¡La fecha del repostaje actualizada no puede ser menor que la anterior!</p>'
+                    res = false;
     }
-    return error;
+    return res;
 }

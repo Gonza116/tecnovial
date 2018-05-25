@@ -5,9 +5,11 @@ function validarFormulario() {
     var res = true;
     
     if(costeOk == "") {
-        res = false;
+		document.getElementById("div_costeSeguroLocal").innerHTML =" <p>El coste no puede estar vacío</p>"
+		res = false:
     } else if(patron.test(coste)) {
-        res = false;
+	res = false;
+	document.getElementById("div_costeSeguroLocal").innerHTML =" <p>El coste se compone de números</p>"
     }
     return res;   
 }

@@ -5,8 +5,11 @@ function validarFormulario() {
     var res = true;
     
     if(costeOk == "") {
-        res = false;
+		res = false;
+		document.getElementById("div_costeTasas").innerHTML =" <p>El coste no puede estar vacío</p>"
     } else if(patron.test(coste)) {
-        res = false;
+		res = false;
+		document.getElementById("div_costeTasas").innerHTML =" <p>El coste se compone de números</p>"
     }
-    return res;
+    return res;   
+}
