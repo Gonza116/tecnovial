@@ -11,18 +11,18 @@ function validarFormulario() {
     
 
     if (nombreOk.length == 0) {
-        window.alert("El nombre no puede estar vacío");
+	 document.getElementById("div_nombre").innerHTML = "<p>El nombre no puede estar vacío</p>"
         res = false;
     }
     
     if (apellidosOk.length == 0) {
-        window.alert("Los apellidos no pueden estar vacíos");
+		document.getElementById("div_apellidos").innerHTML = "<p>Los apellidos no pueden estar vacíos</p>"
         res = false;
     }
     
     if (domicilioOk.length == 0) {
-        window.alert("El domicilio no puede estar vacío");
-        res = false;
+	document.getElementById("div_domicilio").innerHTML = "<p>El domicilio no puede estar vacío</p>"     
+	 res = false;
     }
       return res;
 }
@@ -48,7 +48,7 @@ function validarTelefono() {
 		var telefono = document.getElementById("alum_telefono");
         var telefono2 = telefono.value;
         var telefonoOk = telefono2.trim();
-        var patronTelefono = /^\d{9}$/;
+        var patronTelefono = /^\d{9,14}$/;  
         valid = valid && !(telefonoOk.length == 0) && (patronTelefono.test(telefonoOk));
 		if (!valid){
             var error = "El teléfono se compone de 9 dígitos";

@@ -54,10 +54,10 @@
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMA_ITV'] ?></p>
         <input type="hidden" id="ult_itv" name="ult_itv" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha de la nueva ITV:</strong></p>
-            <form action="ficha_coche.php">
+            <form action="ficha_coche.php" onsubmit="return notificationITVAnterior();">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
-                <input type="date" id="fecha_nueva_itv" name="fecha_nueva_itv" required/>
-                <input type="submit" value="Actualizar fecha" onfocus="notificationITVAnterior();"/>
+                <input type="date" id="fecha_nueva_itv" name="fecha_nueva_itv" required/><div id="div_fecha_nueva_itv"></div>
+                <input type="submit" value="Actualizar fecha" />
             </form> 
     </fieldset>
     <fieldset>
@@ -65,10 +65,10 @@
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMO_REPOSTAJE'] ?></p>
         <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha del nuevo repostaje:</strong></p>
-            <form action="ficha_coche.php">
+            <form action="ficha_coche.php" onsubmit="return notificationRepAnterior();">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
-                <input type="date" id="fecha_nuevo_repostaje" name="fecha_nuevo_repostaje" required/>
-                <input type="submit" value="Actualizar fecha" onfocus="notificationRepAnterior();"/>
+                <input type="date" id="fecha_nuevo_repostaje" name="fecha_nuevo_repostaje" required/><div id="div_fecha_nuevo_rep"></div>
+                <input type="submit" value="Actualizar fecha"/>
             </form>  
     </fieldset>
     <fieldset>
