@@ -73,7 +73,7 @@
             <legend>Añadir test hecho</legend>
             <form action="acciones/accion_anadir_test.php">
                 <p><input name="num_alum" type="text" value="<?php echo $id ?>" hidden>
-                Fecha del test: <input name="fecha" type="date">
+                Fecha del test: <input name="fecha" type="date" required>
                 Número del test: <input name="num_test" type="number" min="1" max="90" value="1">
                 Número de fallos: <input name="num_fallos" type="number" min="0" max="30" value="0">
                 <input type="submit" value="Añadir test"></p>
@@ -142,7 +142,7 @@
                 <legend>Añadir examen teórico</legend>
                 <form action="acciones/accion_anadir_examen_t.php">
                     <input name="id" type="text" value="<?php echo $id ?>" hidden />
-                    <input name="fecha_ex_t" id="fecha_ex_t" type="date"/>
+                    <input name="fecha_ex_t" id="fecha_ex_t" type="date" required/>
                     <input type="submit" value="Añadir" onfocus="notificationTExams();"/>
                 </form>
             </fieldset>
@@ -185,7 +185,7 @@
                 <legend>Añadir examen practico</legend>
                 <form action="acciones/accion_anadir_examen_p.php">
                     <input name="id" type="text" value="<?php echo $id ?>" hidden />
-                    <input name="fecha_ex_p" id="fecha_ex_p" type="date"/>
+                    <input name="fecha_ex_p" id="fecha_ex_p" type="date" required/>
                     <input type="submit" value="Añadir" onfocus="notificationPExams();"/>
                 </form>
             </fieldset>
@@ -211,7 +211,7 @@
                     <option value="<?php echo $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></option>
                     <?php } ?>
                     </select>
-                Fecha: <input type="date" name="fecha_clase"> 
+                Fecha: <input type="date" name="fecha_clase" required> 
                 ¿Reciclaje? <select name="reciclaje">
                     <option value="SI">Sí</option>
                     <option value="NO" selected>No</option>

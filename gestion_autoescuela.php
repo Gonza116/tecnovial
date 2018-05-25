@@ -152,7 +152,7 @@
             <legend>Crear nuevo producto</legend>
             <form action="acciones/accion_anadir_producto.php">
                 <p>
-                Nombre del producto: <input type="text" name="nombre_prod" />
+                Nombre del producto: <input type="text" name="nombre_prod" required />
                 Precio del producto: <input type="number" name="precio_prod" value="10" /> € <input type="submit" value="Añadir" />
                 </p>
             </form>
