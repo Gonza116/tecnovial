@@ -49,14 +49,9 @@
             var mes = fecha.getMonth() + 1;
             document.getElementById('fecha_hoy').innerHTML = "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>";
     }
-        
-    function funciones() {
-        fechaHoy();
-        //notificationITV();
-    }
     </script>
 </head>
-<body onload="funciones();">
+<body onload="fechaHoy();">
 <?php include_once("cabecera.php") ?>
     <div id="fecha_hoy"></div>
     <?php if($hayErrores){ ?>
@@ -106,7 +101,6 @@
             <?php } ?>
         </table>
         </fieldset>
-    </fieldset>
     <fieldset>
         <legend>Productos</legend>
         

@@ -37,10 +37,6 @@
             header("Location: ficha_coche.php?id_coche=" . $id_coche);
         }
     }
-    
-    
-
-
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +51,7 @@
     <fieldset>
         <legend>Última ITV</legend>
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMA_ITV'] ?></p>
+        <input type="hidden" id="ult_itv" name="ult_itv" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha de la nueva ITV:</strong></p>
             <form action="ficha_coche.php">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />

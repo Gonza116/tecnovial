@@ -53,6 +53,7 @@
             </legend>
             <p><strong>DNI: </strong> <?php echo $alumno['DNI'] ?>
             <p><strong>Fecha de nacimiento: </strong> <?php echo $alumno['FECHA_NAC'] ?>
+                <input type="hidden" id="fecha_nac" name="fecha_nac" value="<?php echo $alumno['FECHA_NAC'] ?>">
             <p><strong>Fecha de matriculación: </strong> <?php echo $alumno['FECHA_MATRICULACION'] ?>
             <p><strong>Caducidad de las tasas: </strong> <?php echo $alumno['CAD_TASAS'] ?>
                 <input type="hidden" id="cad_tasas" name="cad_tasas" value="<?php echo $alumno['CAD_TASAS'] ?>">
