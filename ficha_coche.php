@@ -43,10 +43,11 @@
 <html lang="es">
 <header>
     <meta charset="utf-8">
-    <script src="js/notificaciones.js" type="text/javascript"></script>
+    <script src="js/notificaciones.js" type="text/javascript">
+    </script>
     <title>Tecnovial: Viendo coche</title>
 </header>
-<body>
+<body onload="notificationITV();">
     <h1>Información del coche</h1>
     <fieldset>
         <legend>Última ITV</legend>
@@ -55,21 +56,20 @@
         <p><strong>Fecha de la nueva ITV:</strong></p>
             <form action="ficha_coche.php">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
-                <input type="date" name="fecha_nueva_itv" />
-                <input type="submit" value="Actualizar fecha" onfocus="notificationITVAnterior();" />
-            </form>
-        
+                <input type="date" id="fecha_nueva_itv" name="fecha_nueva_itv" required/>
+                <input type="submit" value="Actualizar fecha" onfocus="notificationITVAnterior();"/>
+            </form> 
     </fieldset>
     <fieldset>
         <legend>Último repostaje</legend>
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMO_REPOSTAJE'] ?></p>
+        <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha del nuevo repostaje:</strong></p>
             <form action="ficha_coche.php">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
-                <input type="date" name="fecha_nuevo_repostaje" />
+                <input type="date" id="fecha_nuevo_repostaje" name="fecha_nuevo_repostaje" required/>
                 <input type="submit" value="Actualizar fecha" onfocus="notificationRepAnterior();"/>
-            </form>
-        
+            </form>  
     </fieldset>
     <fieldset>
         <legend>Kilometraje total</legend>
