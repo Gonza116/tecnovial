@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+
+#ex_p {
+    float: left;
+    width: 49.5%;
+}
+
+#ex_t {
+    float: right;
+    width: 49.5%;
+}
+
+#fecha {
+    width: 30%;
+    text-align: center; 
+    padding: 10px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-family: "Candara";
+}
+
+#titulo {
+    font-family: "Candara";
+}
+
+#fecha2 {
+    font-family: "Candara";
+}
+
+#alumno2 {
+    font-family: "Candara";
+}
+
+#coche {
+    font-family: "Candara";
+}
+
+#tabla_datos {
+    font-family: "Candara";
+}
+
+table {
+    background-color: bisque;
+}
+
+#alumno {
+    width: 70%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-family: "Candara";
+}
+
+td {
+    text-align: center;
+    border-right: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+a {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+

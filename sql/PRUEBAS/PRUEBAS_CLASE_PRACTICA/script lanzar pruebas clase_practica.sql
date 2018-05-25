@@ -1,0 +1,50 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    w_num_clase integer;
+    w_num_alum1 varchar(20);
+    w_num_alum2 varchar(20);
+    w_num_prof1 integer;
+    w_num_prof2 integer;
+    w_num_coche1 integer;
+    w_num_coche2 integer;
+    anyo char(4);
+
+BEGIN
+    SELECT EXTRACT(YEAR FROM SYSDATE) INTO anyo FROM dual;
+    ANADIR_ALUMNO('11111139Y', '01/01/1970', 'Dummy12', 'Try', sysdate, '954111111', 'No existe', 'BASICOS','Dummyland', 3, null);
+    w_num_alum1 := num_alum.currval || '/' || anyo;
+    ANADIR_ALUMNO('11111138Y', '01/01/1970', 'Dummya12', 'Try', sysdate, '954111111', 'No existe', 'BASICOS','Dummyland', 3, null);
+    w_num_alum2 := num_alum.currval || '/' || anyo;
+    ANADIR_PROFESOR('Profesoor', 'Unoo');
+    w_num_prof1 := num_prof.currval;
+    ANADIR_PROFESOR('Professor', 'Doos');
+    w_num_prof2 := num_prof.currval;
+    ANADIR_COCHE('1239 OWO', sysdate, 10000, sysdate);
+    w_num_coche1 := num_coche.currval;
+    ANADIR_COCHE('1238 UWU', sysdate, 10000, sysdate);
+    w_num_coche2 := num_coche.currval;
+    DBMS_OUTPUT.put_line('');
+    DBMS_OUTPUT.put_line('PRUEBAS EN LA TABLA DE CLASE PRACTICA');
+    DBMS_OUTPUT.put_line('=====================================');
+    PRUEBAS_CLASE_PRACTICA.INICIALIZAR;
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 01 - Inserción correcta', w_num_alum1, w_num_prof1, w_num_coche1, sysdate, 1, 32, 'NO', 'Ninguna', true);
+    w_num_clase := num_clase_p.currval;
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 02 - Inserción con num_alum null', null, w_num_prof1, w_num_coche1, sysdate, 1, 32, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 03 - Inserción con num_prof null', w_num_alum1, null, w_num_coche1, sysdate, 1, 32, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 04 - Inserción con num_coche null', w_num_alum1, w_num_prof1, null, sysdate, 1, 32, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 05 - Inserción con fecha de la clase null', w_num_alum1, w_num_prof1, w_num_coche1, null, 1, 32, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 06 - Inserción con valoracion null', w_num_alum1, w_num_prof1, w_num_coche1, sysdate, null, 32, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 07 - Inserción con kms_clase null', w_num_alum1, w_num_prof1, w_num_coche1, sysdate, 1, null, 'NO', 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 08 - Inserción con es_reciclaje null', w_num_alum1, w_num_prof1, w_num_coche1, sysdate, 1, 32, null, 'Ninguna', false);
+    PRUEBAS_CLASE_PRACTICA.INSERTAR('Prueba 09 - Inserción con incidencia null', w_num_alum1, w_num_prof1, w_num_coche1, sysdate, 1, 32, 'NO', null, true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_num_alum ('Prueba 10 - Cambiar num_alum', w_num_clase, w_num_alum2, true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_num_prof ('Prueba 11 - Cambiar num_prof', w_num_clase, w_num_prof2, true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_num_coche ('Prueba 12 - Cambiar num_coche', w_num_clase, w_num_coche2, true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_fecha ('Prueba 13 - Cambiar fecha',  w_num_clase, '12/02/2018', true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_valoracion ('Prueba 14 - Cambiar valoracion',  w_num_clase, -1, true); 
+    PRUEBAS_CLASE_PRACTICA.actualizar_kms_clase ('Prueba 15 - Cambiar kms_clase',  w_num_clase, 45, true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_es_reciclaje ('Prueba 16 - Cambiar es_reciclaje',  w_num_clase, 'SI', true);
+    PRUEBAS_CLASE_PRACTICA.actualizar_incidencia ('Prueba 17 - Cambiar incidencias',  w_num_clase, 'Se comio una farola', true);
+    PRUEBAS_CLASE_PRACTICA.eliminar ('Prueba 18 - Eliminar clase', w_num_clase, true);
+END;

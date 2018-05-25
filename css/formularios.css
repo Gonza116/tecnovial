@@ -1,0 +1,13 @@
+* {
+box-sizing: border-box; /*que los elementos lleven incluidos el margen y el padding*/
+}
+
+body#formulario {
+    padding-left: 40px;
+    border: 1px solid black;
+    padding-bottom: 10px; 
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+

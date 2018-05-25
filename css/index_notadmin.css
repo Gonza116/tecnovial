@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+html{   
+    background-image: url(../images/15032013415.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    max-height: 100%;
+}
+
+#log_ad {
+    position: fixed;
+	bottom: 10%;
+    left: 43%;
+    opacity: 1;
+}
+
+#bottom {
+    
+    background-color: #e7e7e7;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 15px;
+    border: 2px solid antiquewhite;
+    font-family: "Candara";
+    color: #383838;
+}
+
+#cod_ad {
+    position: fixed;
+	top: 44%;
+    left: 43%;
+    text-align: center;
+    font-family: "Candara";
+    font-size: 15px;
+    color: white;
+    text-shadow: 3px 3px 2px black;
+    opacity: 1;
+}
+
+#log_b {
+	background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 5px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
+#del_b{
+    background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 3px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
+#profes_pass {
+   display: inline-block;
+   position: relative;
+   margin-top: 30px;
+   top: 40%;
+   left: 45%;
+   right: 45%;
+   text-decoration: none;
+   text-align: center;
+   font-family: "Candara";
+   border: 1px solid;
+   border-radius: 8px;
+   background-color: aliceblue;
+   padding: 5px;
+   border-color: aliceblue;
+   opacity: 0.6;
+}

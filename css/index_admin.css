@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+html{   
+    background-image: url(../images/15032013415.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    max-height: 100%;
+}
+
+#anadir_prof {
+   position: fixed;
+   margin-bottom: 55px;
+   bottom: 0;
+   left: 45%;
+   text-decoration: none;
+   text-align: center;
+   font-family: "Candara";
+   border: 1px solid;
+   border-radius: 8px;
+   background-color: aliceblue;
+   padding: 5px;
+   border-color: aliceblue;
+   opacity: 0.6;
+}
+
+a {	
+ 	text-decoration: none;
+}
+
+#cerrar {
+    text-align: center;
+	position: fixed;
+    bottom: 0;
+	left: 43%;
+    font-family: "Candara";
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: aliceblue;
+    padding: 5px;
+    border-color: aliceblue;
+    opacity: 0.6;
+}
+
+#cerrar_l {
+    color: midnightblue;
+}
+
+#anadir_prof_l {
+    color: midnightblue;
+}
+
+#profesor {
+   display: inline-block;
+   position: relative;
+   margin-top: 30px;
+   top: 40%;
+   left: 44.5%;
+   right: 45%;
+   text-decoration: none;
+   text-align: center;
+   font-family: "Candara";
+   border: 1px solid;
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
+   background-color: aliceblue;
+   padding-left: 14px;
+   padding-right: 14px;
+   border-color: aliceblue;
+   opacity: 0.6;
+    
+}
+
+#log_b {
+	background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 5px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
+#del_b{
+    background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 3px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
+/*#borrar {
+   display: inline-block;
+   position: relative;
+   margin-top: 0px;
+   top: 40%;
+   left: 44.5%;
+   right: 45%;
+   text-decoration: none;
+   text-align: center;
+   font-family: "Candara";
+   border: 1px solid;
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+   background-color: aliceblue;
+   padding: 5px;
+   border-color: aliceblue;
+   opacity: 0.6;
+}*/
