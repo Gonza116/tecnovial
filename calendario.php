@@ -14,9 +14,10 @@
 <head>
     <title> Calendario</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/calendario.css">
 </head>
     
-<body>
+<body id="formulario">
     <?php include_once("./cabecera.php");
     ?>
     <a href="calendario-examenes.php"> Cambiar a exámenes</a>
