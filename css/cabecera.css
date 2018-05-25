@@ -3,75 +3,61 @@
     src: url('../fonts/Candara.ttf'); /*URL to font*/
 }
 
-#cabecera {
-    border-style: solid;
-    border-width: 0.5px;
-    border-color: gray;
+
+ul.topnav { /*AL PONER UL, ESTAMOS ACOTANDO A LOS TOPNAV QUE SEAN SOLO DE LA CLASE UL*/
+    list-style-type: none;
+    overflow: hidden;
+    background-color: white;
+    padding: 0;
+    margin-top: 1px;
+    font-size: 13.5px;
 }
 #alumnos {
-    border-top: 0px;
-    width: 33%;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    font-family: "Candara";
-    font-size: 13.5px;
-    text-align: center;
+    width: 33.33%;
+    float: left; 
 }
 
 #autoescuela {
-    border-top: 0px;
-    width: 33%;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    font-family: "Candara";
-    font-size: 13.5px;
-    text-align: center;
+    width: 33.33%;
+    float: left;
 }
 
 #calendario {
+    width: 33.33%;
+    float: left;
+}
+
+ul.topnav input {
+    width: 100%;
+    background-color: #e5fdff;
+    border: none;
+    padding: 3px;
+}
+
+ul.topnav li input {
     border-top: 0px;
-    width: 33%;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    font-family: "Candara";
-    font-size: 13.5px;
     text-align: center;
-}
-
-#head { /*AL PONER UL, ESTAMOS ACOTANDO A LOS TOPNAV QUE SEAN SOLO DE LA CLASE UL*/
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-
-#head:#alumnos, #autoescuela, #calendario {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 13px;
+    font-family: "Candara";
+    color: #525252;
+	text-shadow: 3px 3px 3px #007681;
 }
 
 ul.topnav li.icon {
     display: none;
 }
 
-ul.topnav li a:hover {
-    background-color: #555;
+ul.topnav li input:hover {
+    background-color: #97dbe2;
 }
+
 @media screen and (max-width:680px) {
 ul.topnav li:not(:first-child) {display: none;}
 ul.topnav li.icon {
 float: right;
 display: inline-block;
-}
-.autor{
-display: none;
 }
 }
 
@@ -86,7 +72,9 @@ ul.topnav.responsive li {
 float: none;
 display: inline;
 }
-ul.topnav.responsive li a {
+ul.topnav.responsive li input {
 display: block;
 text-align: left;
 }
+}
+    
