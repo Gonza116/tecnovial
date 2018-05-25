@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
 #cabecera {
     border-style: solid;
     border-width: 0.5px;
@@ -8,6 +13,9 @@
     width: 33%;
     padding-top: 3px;
     padding-bottom: 3px;
+    font-family: "Candara";
+    font-size: 13.5px;
+    text-align: center;
 }
 
 #autoescuela {
@@ -15,6 +23,9 @@
     width: 33%;
     padding-top: 3px;
     padding-bottom: 3px;
+    font-family: "Candara";
+    font-size: 13.5px;
+    text-align: center;
 }
 
 #calendario {
@@ -22,4 +33,60 @@
     width: 33%;
     padding-top: 3px;
     padding-bottom: 3px;
+    font-family: "Candara";
+    font-size: 13.5px;
+    text-align: center;
+}
+
+#head { /*AL PONER UL, ESTAMOS ACOTANDO A LOS TOPNAV QUE SEAN SOLO DE LA CLASE UL*/
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+#head:#alumnos, #autoescuela, #calendario {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+ul.topnav li.icon {
+    display: none;
+}
+
+ul.topnav li a:hover {
+    background-color: #555;
+}
+@media screen and (max-width:680px) {
+ul.topnav li:not(:first-child) {display: none;}
+ul.topnav li.icon {
+float: right;
+display: inline-block;
+}
+.autor{
+display: none;
+}
+}
+
+@media screen and (max-width:680px) {
+ul.topnav.responsive {position: relative;}
+ul.topnav.responsive li.icon {
+position: absolute;
+    right: 0;
+top: 0;
+}
+ul.topnav.responsive li {
+float: none;
+display: inline;
+}
+ul.topnav.responsive li a {
+display: block;
+text-align: left;
 }
