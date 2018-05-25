@@ -48,7 +48,7 @@ function validarTelefono() {
 		var telefono = document.getElementById("alum_telefono");
         var telefono2 = telefono.value;
         var telefonoOk = telefono2.trim();
-        var patronTelefono = /^\d{9}$/;
+        var patronTelefono = /^\d{9,14}$/;  
         valid = valid && !(telefonoOk.length == 0) && (patronTelefono.test(telefonoOk));
 		if (!valid){
             var error = "El teléfono se compone de 9 dígitos";
