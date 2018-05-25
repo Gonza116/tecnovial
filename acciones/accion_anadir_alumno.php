@@ -48,6 +48,19 @@
 
     if(isset($error)){
         $_SESSION['error'] = $error;
+        $nuevoAlumno['nombre'] = $_REQUEST['alum_nombre'];
+        $nuevoAlumno['apellidos'] = $_REQUEST['alum_apellidos'];
+        $nuevoAlumno['DNI'] = $_REQUEST['alum_DNI'];
+        $nuevoAlumno['fecha_nac'] = $_REQUEST['alum_fecha_nac'];
+        $nuevoAlumno['fecha_mat'] = $_REQUEST['alum_fecha_mat'];
+        $nuevoAlumno['telefono'] = $_REQUEST['alum_telefono'];
+        $nuevoAlumno['rest'] = $_REQUEST['alum_rest'];
+        $nuevoAlumno['estudios'] = $_REQUEST['alum_estudios'];
+        $nuevoAlumno['domicilio'] = $_REQUEST['alum_domicilio'];
+        $nuevoAlumno['opor'] = $_REQUEST['alum_opor'];
+        $nuevoAlumno['amigo'] = $_REQUEST['alum_amigo'];
+        $_SESSION['alumno_mal'] = $nuevoAlumno;
+        
         header("Location: ../anadir/anadir_alumno.php");
     } else {
         $nuevoAlumno['nombre'] = $_REQUEST['alum_nombre'];
