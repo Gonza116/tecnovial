@@ -140,10 +140,10 @@
             </fieldset>
             <fieldset>
                 <legend>Añadir examen teórico</legend>
-                <form action="acciones/accion_anadir_examen_t.php">
+                <form action="acciones/accion_anadir_examen_t.php" onsubmit="return notificationTExams();">
                     <input name="id" type="text" value="<?php echo $id ?>" hidden />
                     <input name="fecha_ex_t" id="fecha_ex_t" type="date" required/>
-                    <input type="submit" value="Añadir" onfocus="notificationTExams();"/>
+                    <input type="submit" value="Añadir"/>
                 </form>
             </fieldset>
         </fieldset>
@@ -183,10 +183,10 @@
             </fieldset>
             <fieldset>
                 <legend>Añadir examen practico</legend>
-                <form action="acciones/accion_anadir_examen_p.php">
+                <form action="acciones/accion_anadir_examen_p.php" onsubmit="return notificationPExams();">
                     <input name="id" type="text" value="<?php echo $id ?>" hidden />
                     <input name="fecha_ex_p" id="fecha_ex_p" type="date" required/>
-                    <input type="submit" value="Añadir" onfocus="notificationPExams();"/>
+                    <input type="submit" value="Añadir"/>
                 </form>
             </fieldset>
         </fieldset>

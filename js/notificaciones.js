@@ -2,12 +2,10 @@
 function notificationOil() {
     var kms_antes = document.getElementById("kms_anteriores").value;
     var kms_actual = document.getElementById("kms").value;
-    var error = "";
     
     if(kms_antes + kms_actual >= 20000) {
-        error = window.alert("Es recomendable cambiar el aceite, 20000 kms superados");
+    window.alert("Es recomendable cambiar el aceite, 20000 Kms superados");
     }
-    return error;
 }
 
 
@@ -18,22 +16,23 @@ function notificationTExams() {
     
     cad_tasas = new Date(parseInt(cad_tasas[2]),parseInt(cad_tasas[1]-1),parseInt(cad_tasas[0]));
     fecha_examen_t = new Date(parseInt(fecha_examen_t[0]),parseInt(fecha_examen_t[1]-1),parseInt(fecha_examen_t[2]));
-    console.info(cad_tasas.getFullYear().toString().substr(-2));
-    console.info(fecha_examen_t.getFullYear().toString().substr(-2));
-    var error = "";
+    var res = true;
     
  if(cad_tasas.getFullYear().toString().substr(-2) < fecha_examen_t.getFullYear().toString().substr(-2)) {
         window.confirm('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+        res = false;
     } else if (cad_tasas.getFullYear().toString().substr(-2) == fecha_examen_t.getFullYear().toString().substr(-2)) {
         if(cad_tasas.getMonth() == fecha_examen_t.getMonth()) {
             if(cad_tasas.getDate() <= fecha_examen_t.getDate()) {
                 window.alert('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+                res = false;
             }
         } else if (cad_tasas.getMonth() < fecha_examen_t.getMonth()) {
             window.alert('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+            res = false;
         }
     }
-    return error;
+    return res;
 }
 
 function notificationTasasP() {
@@ -43,22 +42,23 @@ function notificationTasasP() {
     
     cad_tasas = new Date(parseInt(cad_tasas[2]),parseInt(cad_tasas[1]-1),parseInt(cad_tasas[0]));
     fecha_examen_p = new Date(parseInt(fecha_examen_p[0]),parseInt(fecha_examen_p[1]-1),parseInt(fecha_examen_p[2]));
-    console.info(cad_tasas.getFullYear().toString().substr(-2));
-    console.info(fecha_examen_p.getFullYear().toString().substr(-2));
-    var error = "";
+    var res = true;
     
  if(cad_tasas.getFullYear().toString().substr(-2) < fecha_examen_p.getFullYear().toString().substr(-2)) {
         window.confirm('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+        res = false;
     } else if (cad_tasas.getFullYear().toString().substr(-2) == fecha_examen_p.getFullYear().toString().substr(-2)) {
         if(cad_tasas.getMonth() == fecha_examen_p.getMonth()) {
             if(cad_tasas.getDate() <= fecha_examen_p.getDate()) {
                 window.alert('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+                res = false;
             }
         } else if (cad_tasas.getMonth() < fecha_examen_p.getMonth()) {
             window.alert('¡Las tasas de ' + nombre_alumno + ' están caducadas!');
+            res = false;
         }
     }
-    return error;
+    return res;
 }
 
 function notificationMenorEdad() {
@@ -68,21 +68,18 @@ function notificationMenorEdad() {
     
     fecha_nac = new Date(parseInt(fecha_nac[2]),parseInt(fecha_nac[1]-1),parseInt(fecha_nac[0]));
     fecha_examen_p = new Date(parseInt(fecha_examen_p[0]),parseInt(fecha_examen_p[1]-1),parseInt(fecha_examen_p[2]));
-    var error = "";
-    console.info(fecha_examen_p);
-    console.info(fecha_nac);
+    var res = true;
     
     var edad = fecha_examen_p.getFullYear() - (fecha_nac.getFullYear() + 100);
     var m = fecha_examen_p.getMonth() - fecha_nac.getMonth();
-    console.info(edad);
     
-     if(m < 0 || (m == 0 && fecha_examen_p.getDate() < fecha_nac.getDate())) {
-        edad = edad - 1;
-    } else if (edad < 18) {
-        error = window.alert('El alumno ' + nombre_alumno + ' es menor en la fecha del examen práctico.')
+        if(m < 0 || (m == 0 && fecha_examen_p.getDate() < fecha_nac.getDate())) {
+            edad = edad - 1;
+        } else if (edad < 18) {
+            error = window.alert('El alumno ' + nombre_alumno + ' es menor en la fecha del examen práctico.')
+            res = false;
     }
-    return error;
-    
+    return res;
 }
 
 function notificationPExams() {
@@ -94,8 +91,6 @@ function notificationITV() {
     var fecha_actual = new Date();
     var fecha_itv = document.getElementById("ult_itv").value.split("/");
     
-    var error = "";
-    
     fecha_itv = new Date(parseInt(fecha_itv[2]),parseInt(fecha_itv[1]-1),parseInt(fecha_itv[0]));
     var mes = fecha_actual.getMonth() + 1;
     if (mes < 10) {
@@ -105,20 +100,15 @@ function notificationITV() {
     fecha_actual = fecha_actual.split("/");
     fecha_actual = new Date(parseInt(fecha_actual[2]),parseInt(fecha_actual[1]-1),parseInt(fecha_actual[0]));
     
-    console.info(fecha_actual);
-    console.info(fecha_itv);
-    
         if(fecha_itv.getFullYear() == fecha_actual.getFullYear()) {
             if(fecha_itv.getDate() == fecha_actual.getDate()) {
                 if (fecha_itv.getMonth() - 1 == fecha_actual.getMonth()){
-                    error = window.alert('¡La ITV caduca en un mes!');
+                    window.alert('¡La ITV caduca en un mes!');
             } else if (fecha_itv.getMonth() == 1 && fecha_actual.getMonth() == 12) {
-            error = window.alert('¡La ITV caduca en un mes!');
+                    window.alert('¡La ITV caduca en un mes!');
             }
         }
     }   
-    return error;
-   
 }
 
 function notificationTasas() {
@@ -135,20 +125,15 @@ function notificationTasas() {
     fecha_actual = fecha_actual.split("/");
     fecha_actual = new Date(parseInt(fecha_actual[2]),parseInt(fecha_actual[1]-1),parseInt(fecha_actual[0]));
     
-    var error = "";
-    
     if(cad_tasas.getFullYear() == fecha_actual.getFullYear()) {
             if(cad_tasas.getDate() == fecha_actual.getDate()) {
                 if (cad_tasas.getMonth() - 1 == fecha_actual.getMonth()){
-                    error = window.alert('¡Las tasas de ' + nombre_alumno + ' caducan en un mes!');
+                    window.alert('¡Las tasas de ' + nombre_alumno + ' caducan en un mes!');
             } else if (cad_tasas.getMonth() == 1 && fecha_actual.getMonth() == 12) {
-            error = window.alert('¡Las tasas de ' + nombre_alumno + ' caducan en un mes!');
+                window.alert('¡Las tasas de ' + nombre_alumno + ' caducan en un mes!');
             }
         }
     }   
-    
-    return error;
-
 }
 
 function notificationITVAnterior() {
