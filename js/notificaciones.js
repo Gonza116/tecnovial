@@ -83,8 +83,9 @@ function notificationMenorEdad() {
 }
 
 function notificationPExams() {
-    notificationTasasP();
-    notificationMenorEdad();
+    var res1 = notificationTasasP();
+    var res2 = notificationMenorEdad();
+    return res1 && res2;
 }
 
 function notificationITV() {
