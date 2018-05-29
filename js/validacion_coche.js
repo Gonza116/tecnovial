@@ -1,6 +1,6 @@
 function validarFormulario() {
     var matricula = document.getElementById("matricula").value;
-    var matriculaOk = matricula.trim;
+    var matriculaOk = matricula.trim();
     var res = true;
     
     if (matriculaOk.length == 0) {
