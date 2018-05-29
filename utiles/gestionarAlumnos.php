@@ -7,7 +7,7 @@ function getFechaFormateada($fecha){
 
 function consultarAlumnos($conexion) {
     try{
-        $consulta = "SELECT * FROM ALUMNOS";
+        $consulta = "SELECT * FROM ALUMNOS ORDER BY BAJA, APELLIDOS, NOMBRE";
         return $conexion->query($consulta);
     } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();

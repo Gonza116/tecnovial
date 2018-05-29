@@ -34,7 +34,7 @@
         unset($_SESSION['alumnos_buscados']);
         $searchingAlum = true;
     } else {
-        $query = 'SELECT * FROM ALUMNOS';
+        $query = 'SELECT * FROM ALUMNOS ORDER BY BAJA, APELLIDOS, NOMBRE';
         $alumnos = consulta_paginada($conexion, $query, $page_num, $page_size);
         $total_size = total_consulta($conexion, $query);
         $mostrando = $total_size > $page_size? $page_size : $total_size;
