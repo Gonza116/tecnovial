@@ -17,7 +17,7 @@
         if(trim($_REQUEST['fecha_vencimiento'], " ") == ""){
             $error['fecha_vencimiento'] = "La fecha de vencimiento del seguro no puede estar vacía";
         }
-        if($_REQUEST['fecha_vencimiento'] < $_REQUEST['fecha_contratacion']){
+        if(date($_REQUEST['fecha_vencimiento']) < date($_REQUEST['fecha_contratacion'])){
             $error['fechas'] = "El seguro no puede vencer antes de su contratación";
         }
         if(trim($_REQUEST['num_coche'], " ") == ""){

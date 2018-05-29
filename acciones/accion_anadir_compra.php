@@ -14,7 +14,7 @@
         if(trim($_REQUEST['fecha_compra'], " ") == ""){
             $error['fecha_c'] = "La fecha de compra no puede estar vacía";
         }
-        if($_REQUEST['fecha_compra'] < date("Y-m-d")){
+        if($_REQUEST['fecha_compra'] > date("Y-m-d")){
             $error['fecha_t'] = "La fecha de compra no puede ser posterior al día de hoy";
         }
         
