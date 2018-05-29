@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("utiles/gestionDB.php");
     require_once("utiles/gestionarProductos.php");
     require_once("utiles/gestionarCoches.php");
