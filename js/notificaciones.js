@@ -69,13 +69,18 @@ function notificationMenorEdad() {
     fecha_nac = new Date(parseInt(fecha_nac[2]),parseInt(fecha_nac[1]-1),parseInt(fecha_nac[0]));
     fecha_examen_p = new Date(parseInt(fecha_examen_p[0]),parseInt(fecha_examen_p[1]-1),parseInt(fecha_examen_p[2]));
     var res = true;
+    var prueba = fecha_nac.getFullYear()-1900;
     
+    var edad = fecha_examen_p.getFullYear() - (fecha_nac.getFullYear());
+    if(-1 < fecha_nac.getFullYear()-1900 && fecha_nac.getFullYear()-1900 < 19) {
     var edad = fecha_examen_p.getFullYear() - (fecha_nac.getFullYear() + 100);
+}
     var m = fecha_examen_p.getMonth() - fecha_nac.getMonth();
     
         if(m < 0 || (m == 0 && fecha_examen_p.getDate() < fecha_nac.getDate())) {
             edad = edad - 1;
-        } else if (edad < 18) {
+        }
+        if (edad < 18) {
             error = window.alert('El alumno ' + nombre_alumno + ' es menor en la fecha del examen práctico.')
             res = false;
     }
