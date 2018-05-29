@@ -23,8 +23,8 @@
                 <?php } ?>
             </select>
         </p>
-        <p>Fecha del cobro: <input type="date" name="fecha" /></p>
-        <p>Fecha de entrada en vigor: <input type="date" name="fecha_contratacion" /></p>
+        <p>Fecha del cobro: <input type="date" name="fecha_contratacion" /></p>
+        <p>Fecha de entrada en vigor: <input type="date" name="fecha" /></p>
         <p>Fecha de vencimiento: <input type="date" name="fecha_vencimiento" /></p>
         <p>Precio anual del seguro: <input type="text" name="coste" id="coste" /></p> <div id="div_coste"></div>
         <p><input type="submit" value="Añadir" /> <input type="reset" value="Limpiar" /></p>
