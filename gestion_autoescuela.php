@@ -208,6 +208,13 @@
                     <td><?php echo $sc['FECHA'] ?></td>
                     <td><?php echo $sc['FECHA_VENCIMIENTO'] ?></td>
                     <td><?php echo $sc['COSTE'] ?></td>
+                    <td>
+                        <form action="acciones/accion_borrar_gastos.php">
+                            <input name="es_coche" type="text" value="true" hidden>
+                            <input name="id" type="number" value="<?php echo $sc['COD_GASTO']?>" hidden> 
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
                 </tr>
                 <?php } ?>
             </table>
@@ -226,6 +233,13 @@
                     <td><?php echo $sl['FECHA'] ?></td>
                     <td><?php echo $sl['FECHA_RENOVACION'] ?></td>
                     <td><?php echo $sl['COSTE'] ?></td>
+                    <td>
+                        <form action="acciones/accion_borrar_gastos.php">
+                            <input name="es_local" type="text" value="true" hidden>
+                            <input name="id" type="number" value="<?php echo $sl['COD_GASTO']?>" hidden> 
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
                 </tr>
                 <?php } ?>
             </table>
@@ -244,6 +258,13 @@
                     <td><?php echo $t['NOMBRE'] . " " . $t['APELLIDOS'] ?></td>
                     <td><?php echo $t['FECHA'] ?></td>
                     <td><?php echo $t['COSTE'] ?></td>
+                    <td>
+                        <form action="acciones/accion_borrar_gastos.php">
+                            <input name="es_tasa" type="text" value="true" hidden>
+                            <input name="id" type="number" value="<?php echo $t['COD_GASTO']?>" hidden> 
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
                 </tr>
                 <?php } ?>
             </table>
@@ -262,6 +283,13 @@
                     <td><?php echo $l['FECHA'] ?></td>
                     <td><?php echo $l['GASTO_KWH'] ?></td>
                     <td><?php echo $l['PROXIMO_COBRO'] ?></td>
+                    <td>
+                        <form action="acciones/accion_borrar_gastos.php">
+                            <input name="es_luz" type="text" value="true" hidden>
+                            <input name="id" type="number" value="<?php echo $l['COD_GASTO']?>" hidden> 
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
                 </tr>
                 <?php } ?>
             </table>

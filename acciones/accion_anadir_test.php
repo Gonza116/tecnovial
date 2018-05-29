@@ -15,11 +15,14 @@
         if(trim($_REQUEST['num_test'], " ") == ""){
             $error['test'] = "El número de test no puede estar vacío";
         }
+        if($_REQUEST['num_test'] > 90 || $_REQUEST['num_test'] < 0){
+            $error['test'] = "El número de test no es correcto";
+        }
         if(trim($_REQUEST['num_fallos'], " ") == ""){
             $error['fallos'] = "El número de fallos no puede estar vacío";
         }
-        if($_REQUEST['num_fallos'] > 30){
-            $error['muchos_fallos'] = "El número de fallos no puede ser superior a 30";
+        if($_REQUEST['num_fallos'] > 30 || $_REQUEST['num_fallos'] < 0){
+            $error['muchos_fallos'] = "El número de fallos no es correcto";
         }
         
         if(isset($error)){

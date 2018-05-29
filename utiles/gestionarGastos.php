@@ -26,6 +26,20 @@
         }
     }
 
+    function borrarGastoLuz($conexion, $id){
+        try{
+            $stmt = $conexion->prepare("DELETE FROM LUZ WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $stmt = $conexion->prepare("DELETE FROM GASTOS WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
     function gastoLuz($conexion, $fecha, $coste, $proximo_cobro, $gasto_kwh){
         try{
             $fechaformat = getFechaFormateada($fecha);
@@ -47,6 +61,20 @@
             $stmt = $conexion->prepare("SELECT * FROM GASTOS NATURAL JOIN SEGURO_COCHE NATURAL JOIN COCHES");
             $stmt->execute();
             return $stmt->fetchAll();
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
+    function borrarGastoSeguroCoche($conexion, $id){
+        try{
+            $stmt = $conexion->prepare("DELETE FROM SEGURO_COCHE WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $stmt = $conexion->prepare("DELETE FROM GASTOS WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             header("Location: excepcion.php");
@@ -82,6 +110,20 @@
         }
     }
 
+    function borrarGastoTasas($conexion, $id){
+        try{
+            $stmt = $conexion->prepare("DELETE FROM TASAS WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $stmt = $conexion->prepare("DELETE FROM GASTOS WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
     function gastoTasas($conexion, $fecha, $coste, $fecha_abono, $num_alum){
         $ffformat = getFechaFormateada($fecha);
         $faformat = getFechaFormateada($fecha_abono);
@@ -103,6 +145,20 @@
             $stmt = $conexion->prepare("SELECT * FROM GASTOS NATURAL JOIN SEGURO_LOCAL");
             $stmt->execute();
             return $stmt->fetchAll();
+        } catch(PDOException $e) {
+            $_SESSION['excepcion'] = $e->getMessage();
+            header("Location: excepcion.php");
+        }
+    }
+
+    function borrarGastoLocal($conexion, $id){
+        try{
+            $stmt = $conexion->prepare("DELETE FROM SEGURO_LOCAL WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $stmt = $conexion->prepare("DELETE FROM GASTOS WHERE COD_GASTO = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
             header("Location: excepcion.php");
