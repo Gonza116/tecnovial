@@ -45,6 +45,7 @@
     <meta charset="utf-8">
     <script src="js/notificaciones.js" type="text/javascript"></script>
      <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/gestion_autoescuela.css">
     <script>
         function fechaHoy() {
             var fecha = new Date();
@@ -67,7 +68,8 @@
         <?php } ?>
     </fieldset>
     <?php } ?>
-    <fieldset>
+    <fieldset id="izquierda" class="col-6">
+        <fieldset>
         <legend>Compras</legend>
         <fieldset>
             <legend>Nueva compra</legend>
@@ -89,22 +91,22 @@
                 <input type="date" name="fecha_compra" required />
                 <input type="submit" value="Añadir compra" />
             </form>
-            </p>
         </fieldset>
-        <fieldset>
+            <fieldset>
             <legend>Histórico de compras</legend>
             <table>
             <tr>
-                <th>Concepto</th> <th>Fecha</th> <th>Precio</th>
+                <th class="col-4">Concepto</th> <th class="col-4">Fecha</th> <th class="col-4">Precio</th>
             </tr>
             <?php foreach($compras as $compra){ ?>
             <tr>
-                <td><?php echo $compra['PRODUCTO'] ?></td>
-                <td><?php echo $compra['FECHA_COMPRA'] ?></td>
-                <td><?php echo $compra['PRECIO_PROD_FACT'] ?></td>
+                <td class="col-4"><?php echo $compra['PRODUCTO'] ?></td>
+                <td class="col-4"><?php echo $compra['FECHA_COMPRA'] ?></td>
+                <td class="col-4"><?php echo $compra['PRECIO_PROD_FACT'] ?></td>
             </tr>
             <?php } ?>
         </table>
+                </fieldset>
         </fieldset>
     <fieldset>
         <legend>Productos</legend>
@@ -113,15 +115,15 @@
             <legend>Productos en activo</legend>
             <table>
                 <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
+                    <th class="col-3">Código</th>
+                    <th class="col-3">Nombre</th>
+                    <th class="col-3">Precio</th>
                 </tr>
                 <?php foreach ($productosActivos as $pa){ ?>
                 <tr>
-                    <td><?php echo $pa['COD_PROD'] ?></td>
-                    <td><?php echo $pa['PRODUCTO'] ?></td>
-                    <td><?php echo $pa['PRECIO_PRODUCTO'] ?></td>
+                    <td class="col-3"><?php echo $pa['COD_PROD'] ?></td>
+                    <td class="col-3"><?php echo $pa['PRODUCTO'] ?></td>
+                    <td class="col-3"><?php echo $pa['PRECIO_PRODUCTO'] ?></td>
                     <form action="acciones/hacer_obsoleto.php">
                         <input type="text" name="id_prod" value="<?php echo $pa['COD_PROD'] ?>" hidden/>
                         <td><input type="submit" value="Hacer obsoleto" /></td>
@@ -134,13 +136,13 @@
             <legend>Productos obsoletos</legend>
             <table>
                 <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
+                    <th class="col-4">Código</th>
+                    <th class="col-4">Nombre</th>
                 </tr>
                 <?php foreach ($productosObsoletos as $po){ ?>
                 <tr>
-                    <td><?php echo $po['COD_PROD'] ?></td>
-                    <td><?php echo $po['PRODUCTO'] ?></td>
+                    <td class="col-4"><?php echo $po['COD_PROD'] ?></td>
+                    <td class="col-4"><?php echo $po['PRODUCTO'] ?></td>
                     <form action="acciones/hacer_activo.php">
                         <input type="text" name="id_prod" value="<?php echo $po['COD_PROD'] ?>" hidden/>
                         <td><input type="submit" value="Volver a activar" /></td>
@@ -164,17 +166,17 @@
         <a href="anadir/anadir_coche.php">+ Nuevo coche</a>
         <table>
             <tr>
-                <th>Matrícula</th>
-                <th>Kilómetros</th>
-                <th>Último repostaje</th>
-                <th>Última itv</th>
+                <th class="col-2-5">Matrícula</th>
+                <th class="col-2-5">Kilómetros</th>
+                <th class="col-2-5">Último repostaje</th>
+                <th class="col-2-5">Última itv</th>
             </tr>
             <?php foreach($coches as $coche){ ?>
             <tr>
-                <td id="mat_<?php $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></td>
-                <td><?php echo $coche['KMS'] ?></td>
-                <td><?php echo $coche['ULTIMO_REPOSTAJE'] ?></td>
-                <td id = "itv_<?php $coche['NUM_COCHE'] ?>"><?php echo $coche['ULTIMA_ITV'] ?></td>
+                <td class="col-2-5" id="mat_<?php $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></td>
+                <td class="col-2-5"><?php echo $coche['KMS'] ?></td>
+                <td class="col-2-5"><?php echo $coche['ULTIMO_REPOSTAJE'] ?></td>
+                <td class="col-2-5" id = "itv_<?php $coche['NUM_COCHE'] ?>"><?php echo $coche['ULTIMA_ITV'] ?></td>
                 <td><form action="ficha_coche.php">
                     <input type="number" name="id_coche" value="<?php echo $coche['NUM_COCHE'] ?>" hidden />
                     <input type="submit" value="Ver más" />
@@ -188,6 +190,8 @@
 
         </table>
     </fieldset>
+    </fieldset>
+    <fieldset id="derecha" class="col-6">
     <fieldset>
         <legend>Gastos</legend>
         <form action="gestion_autoescuela.php" method="post">
@@ -198,17 +202,17 @@
             <a href="anadir/anadir_seguro_coche.php">Añadir cobro seguro coche</a>
             <table>
                 <tr>
-                    <th>Matrícula</th>
-                    <th>Fecha del pago</th>
-                    <th>Fecha de renovacion</th>
-                    <th>Precio</th>
+                    <th class="col-2-5">Matrícula</th>
+                    <th class="col-2-5">Fecha del pago</th>
+                    <th class="col-2-5">Fecha de renovacion</th>
+                    <th class="col-2-5">Precio</th>
                 </tr>
                 <?php foreach($seguroCoche as $sc){ ?>
                 <tr>
-                    <td><?php echo $sc['MATRICULA'] ?></td>
-                    <td><?php echo $sc['FECHA'] ?></td>
-                    <td><?php echo $sc['FECHA_VENCIMIENTO'] ?></td>
-                    <td><?php echo $sc['COSTE'] ?></td>
+                    <td class="col-2-5"><?php echo $sc['MATRICULA'] ?></td>
+                    <td class="col-2-5"><?php echo $sc['FECHA'] ?></td>
+                    <td class="col-2-5"><?php echo $sc['FECHA_VENCIMIENTO'] ?></td>
+                    <td class="col-2-5"><?php echo $sc['COSTE'] ?></td>
                     <td>
                         <form action="acciones/accion_borrar_gastos.php">
                             <input name="es_coche" type="text" value="true" hidden>
@@ -225,15 +229,15 @@
             <a href="anadir/anadir_seguro_local.php">Añadir cobro seguro local</a>
             <table>
                 <tr>
-                    <th>Fecha de cobro</th>
-                    <th>Fecha de renovación</th>
-                    <th>Precio</th>
+                    <th class="col-3">Fecha de cobro</th>
+                    <th class="col-3">Fecha de renovación</th>
+                    <th class="col-3">Precio</th>
                 </tr>
                 <?php foreach($seguroLocal as $sl){ ?>
                 <tr>
-                    <td><?php echo $sl['FECHA'] ?></td>
-                    <td><?php echo $sl['FECHA_RENOVACION'] ?></td>
-                    <td><?php echo $sl['COSTE'] ?></td>
+                    <td class="col-3"><?php echo $sl['FECHA'] ?></td>
+                    <td class="col-3"><?php echo $sl['FECHA_RENOVACION'] ?></td>
+                    <td class="col-3"><?php echo $sl['COSTE'] ?></td>
                     <td>
                         <form action="acciones/accion_borrar_gastos.php">
                             <input name="es_local" type="text" value="true" hidden>
@@ -250,15 +254,15 @@
             <a href='anadir/anadir_tasas.php'>Añadir pago de tasas</a>
             <table>
                 <tr>
-                    <th>Alumno</th>
-                    <th>Fecha</th>
-                    <th>Coste</th>
+                    <th class="col-3">Alumno</th>
+                    <th class="col-3">Fecha</th>
+                    <th class="col-3">Coste</th>
                 </tr>
                 <?php foreach($tasas as $t) { ?>
                 <tr>
-                    <td><?php echo $t['NOMBRE'] . " " . $t['APELLIDOS'] ?></td>
-                    <td><?php echo $t['FECHA'] ?></td>
-                    <td><?php echo $t['COSTE'] ?></td>
+                    <td class="col-3"><?php echo $t['NOMBRE'] . " " . $t['APELLIDOS'] ?></td>
+                    <td class="col-3"><?php echo $t['FECHA'] ?></td>
+                    <td class="col-3"><?php echo $t['COSTE'] ?></td>
                     <td>
                         <form action="acciones/accion_borrar_gastos.php">
                             <input name="es_tasa" type="text" value="true" hidden>
@@ -275,15 +279,15 @@
             <a href="anadir/anadir_gasto_luz.php">Añadir gasto de luz</a>
             <table>
                 <tr>
-                    <th>Fecha</th>
-                    <th>Consumo</th>
-                    <th>Fecha del proximo cobro</th>
+                    <th class="col-3">Fecha</th>
+                    <th class="col-3">Consumo</th>
+                    <th class="col-3">Fecha del proximo cobro</th>
                 </tr>
                 <?php foreach($luz as $l){ ?>
                 <tr>
-                    <td><?php echo $l['FECHA'] ?></td>
-                    <td><?php echo $l['GASTO_KWH'] ?></td>
-                    <td><?php echo $l['PROXIMO_COBRO'] ?></td>
+                    <td class="col-3"><?php echo $l['FECHA'] ?></td>
+                    <td class="col-3"><?php echo $l['GASTO_KWH'] ?></td>
+                    <td class="col-3"><?php echo $l['PROXIMO_COBRO'] ?></td>
                     <td>
                         <form action="acciones/accion_borrar_gastos.php">
                             <input name="es_luz" type="text" value="true" hidden>
