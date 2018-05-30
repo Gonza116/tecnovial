@@ -48,3 +48,17 @@
 #buscardni {
     padding: 2px;
 }
+
+#ver_mas {
+    float: left;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 22px;
+    border: 1px solid red;
+
+}
+
+#alum {
+    float: left;
+    border: 1px solid blue;
+}

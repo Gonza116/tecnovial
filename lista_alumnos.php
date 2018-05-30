@@ -54,6 +54,7 @@
     <title>Tecnovial: Listado de alumnos</title>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/lista_alumnos.css">
     <script>
         function fechaHoy() {
             var fecha = new Date();
@@ -64,24 +65,21 @@
         })
         }
     </script>
-        
-
 </head>
 <body onload="fechaHoy();">
 <?php include_once("cabecera.php") ?>
     <div id="fecha_hoy"></div>    
 <fieldset>
     <form action="utiles/busqueda_alumnos.php">
-        <input id="buscarnombre" name="buscarnombre" type="text" placeholder="Buscar por nombre">
-        <input id="buscarapellido" name="buscarapellido" type="text" placeholder="Buscar por apellido">
-        <input id="buscardni" name="buscardni" type="text" placeholder="Buscar por DNI" pattern="^[0-9]{8}[A-Z]">
+        <input class="col-3" id="buscarnombre" name="buscarnombre" type="text" placeholder="Buscar por nombre">
+        <input class="col-3" id="buscarapellido" name="buscarapellido" type="text" placeholder="Buscar por apellido">
+        <input class="col-3" id="buscardni" name="buscardni" type="text" placeholder="Buscar por DNI" pattern="^[0-9]{8}[A-Z]">
         <input type="submit" value="Buscar">
+        <a id="cerrarsesion" href='utiles/cerrarsesion.php'>Cerrar sesión</a>
     </form>
     <form method="get" action="lista_alumnos.php">
         <input type="submit" value="Resetear">
     </form>
-    <a href='utiles/cerrarsesion.php'>Cerrar sesión</a>
-    <br>
     <br>
     <?php if(!$searchingAlum){ ?>
     <div id="enlaces">
@@ -97,12 +95,13 @@
 		<form method="get" action="lista_alumnos.php">
 			<!-- Formulario que contiene el número y cambio de tamaño de página -->
             Mostrando <input type="number" name="page_size" min="1" max="<?php echo $total_size?>" value="<?php echo $mostrando?>"> entradas de <?php echo $total_size?><input type="number" name="page_num" value="<?php echo $page_num?>" hidden>. <input type=submit value="Cambiar">
+            <a href = "anadir/anadir_alumno.php">+ Nuevo alumno</a>
 		</form>
+    <br>
     <?php } ?>
     <legend>
     Lista de alumnos
     </legend>
-    <a href = "anadir/anadir_alumno.php">+ Nuevo alumno</a>
     <?php if($hayErrores){ ?>
     <fieldset>
         <legend>Han ocurrido errores</legend>
@@ -112,13 +111,13 @@
     </fieldset>
     <?php } ?>
     <?php foreach($alumnos as $alumno){ ?>
-    <div> <?php echo $alumno['APELLIDOS'] ?>, <?php echo $alumno['NOMBRE'] ?> 
-          <strong>DNI: </strong> <?php echo $alumno['DNI'] ?>
-          <p><em><?php if ($alumno['BAJA']=='SI'){ echo 'Dado de baja'; } ?></em></p>
-          <form action="ficha_alumno.php">
+    <form class="col-1" id="ver_mas" action="ficha_alumno.php">
                 <input type="text" name="id_alumno" id="id_alumno" value="<?php echo $alumno['NUM_ALUM']?>" hidden>
                 <input type="submit" value="Ver más">
           </form>
+    <div class="col-11" id="alum" > <?php echo $alumno['APELLIDOS'] ?>, <?php echo $alumno['NOMBRE'] ?> 
+          <br><strong>DNI: </strong> <?php echo $alumno['DNI'] ?>
+        <em><?php if ($alumno['BAJA']=='SI'){ echo ' (Dado de baja)'; } ?></em>
     </div>
     <?php } ?>
 </fieldset>
