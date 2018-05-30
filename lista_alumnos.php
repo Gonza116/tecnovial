@@ -77,27 +77,28 @@
         <input class="col-3" id="buscarnombre" name="buscarnombre" type="text" placeholder="Buscar por nombre">
         <input class="col-3" id="buscarapellido" name="buscarapellido" type="text" placeholder="Buscar por apellido">
         <input class="col-3" id="buscardni" name="buscardni" type="text" placeholder="Buscar por DNI" pattern="^[0-9]{8}[A-Z]">
-        <input type="submit" value="Buscar">
-        <a id="cerrarsesion" href='utiles/cerrarsesion.php'>Cerrar sesión</a>
+        <input id="bot" type="submit" value="Buscar">
+        <a id="cerrarsesion" href='utiles/cerrarsesion.php'><img src="images/csesion_sesion.png"></a>
     </form>
     <form method="get" action="lista_alumnos.php">
-        <input type="submit" value="Resetear">
+        <input id="bot" type="submit" value="Resetear">
     </form>
     <br>
     <?php if(!$searchingAlum){ ?>
-    <div id="enlaces"><span id='form'>
+    <div id="enlaces">
 			<!-- Código para poner los enlaces a las páginas -->
-            <?php 
+        <?php 
                 $n_paginas = ceil($total_size / $page_size);
                 $i_paginas = 1;
                 for($i_paginas = 1; $i_paginas <= $n_paginas; $i_paginas++){
-            ?>
-        <a href = "lista_alumnos.php?page_num=<?php echo $i_paginas?>&page_size=<?php echo $page_size?>"><?php echo $i_paginas?></a></span>
+        ?>    
+        <a id='form' href = "lista_alumnos.php?page_num=<?php echo $i_paginas?>&page_size=<?php echo $page_size?>"><?php echo $i_paginas?></a>
+        
 		</div>
 		  <?php } ?>
 		<form method="get" action="lista_alumnos.php">
 			<!-- Formulario que contiene el número y cambio de tamaño de página -->
-            Mostrando <input type="number" name="page_size" min="1" max="<?php echo $total_size?>" value="<?php echo $mostrando?>"> entradas de <span id='form'><?php echo $total_size?></span><input type="number" name="page_num" value="<?php echo $page_num?>" hidden>. <input type=submit value="Cambiar"><br>
+            Mostrando <input type="number" name="page_size" min="1" max="<?php echo $total_size?>" value="<?php echo $mostrando?>"> entradas de <span id='form'><?php echo $total_size?></span><input type="number" name="page_num" value="<?php echo $page_num?>" hidden>. <input id="bot" type=submit value="Cambiar"><br>
             <a href = "anadir/anadir_alumno.php"><img src="images/anadir_alumno.png" title="Añadir alumno"></a>
 		</form>
     <br>
@@ -114,7 +115,7 @@
     <?php foreach($alumnos as $alumno){ ?>
     <form class="col-1" id="ver_mas" action="ficha_alumno.php">
                 <input type="text" name="id_alumno" id="id_alumno" value="<?php echo $alumno['NUM_ALUM']?>" hidden>
-                <input type="submit" value="Ver más">
+        <input type="image" src="images/ver_mas.png" sralt="Submit" title="Ver más"/>
           </form>
     <div class="col-11" id="alum" > <?php echo $alumno['APELLIDOS'] ?>, <?php echo $alumno['NOMBRE'] ?> 
         <br><strong>DNI: </strong> <span id='form'><?php echo $alumno['DNI'] ?></span>
