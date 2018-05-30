@@ -2,6 +2,27 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Gothic'; /*a name to be used later*/
+    src: url('../fonts/Gothic.ttf'); /*URL to font*/
+}
+
+html {
+    background-image: url(../images/tecno.png);
+}
+
+#saludo {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #16004a;
+	text-shadow: 2px 2px 2px #999999;
+}
+
 .row::after {
     content: "";
     clear: both;
@@ -53,12 +74,44 @@
     float: left;
     text-align: center;
     padding-top: 25px;
-    padding-bottom: 22px;
-    border: 1px solid red;
-
+    padding-bottom: 24px;
+    background-color: bisque;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    opacity: 0.7;
+    border-bottom: 2px solid rgba(255,255,255,1);
 }
 
 #alum {
     float: left;
-    border: 1px solid blue;
+    background-color: bisque;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    opacity: 0.7;
+    border-bottom: 2px solid rgba(255,255,255,1);
+}
+
+body {
+    font-family: "Candara";
+}
+
+#form {
+    font-family: "Gothic";
+    font-size: 14.5px;
+}
+
+#fecha_form {
+    font-family: "Gothic";
+    font-size: 18px;
+}
+
+#lista {
+    border-style: none;
+}
+
+#titulo {
+    margin-top: 0px;
+    font-family: "Candara";
+    color: #16004a;
+    font-size: 30px;
 }

@@ -22,7 +22,7 @@
             var mes = fecha.getMonth() + 1;
             
         $(document).ready(function(){
-            $("#fecha_hoy").append( "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>");
+            $("#fecha_hoy").append( "<p id='saludo'>Hoy estamos a <span id='fecha_form'>" + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + "</span>. ¡Qué tengas un buen día!</p>");
         })
         }
     </script>
@@ -31,7 +31,7 @@
 <body id="formulario" onload="fechaHoy();">
     <?php include_once("./cabecera.php");
     ?>
-    <a href="calendario_examenes.php"><img src="./images/examen.png"></a>
+    <a href="calendario_examenes.php"><img src="./images/examen.png" title="Cambiar a exámenes"></a>
     <h1 id="titulo">Calendario de Clases*</h1>
     <div id="fecha_hoy"></div>
     <table> 

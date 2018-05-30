@@ -12,15 +12,29 @@ html {
     background-image: url(../images/tecno.png);
 }
 
+#saludo {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #16004a;
+	text-shadow: 2px 2px 2px #999999;
+}
+
+#fecha_form {
+    font-family: "Gothic";
+    font-size: 18px;
+}
+
 
 #ex_p {
     float: left;
     width: 49.5%;
+    color: #16004a;
 }
 
 #ex_t {
     float: right;
     width: 49.5%;
+    color: #16004a;
 }
 
 #fecha {
@@ -34,23 +48,23 @@ html {
 
 #titulo {
     font-family: "Candara";
-    color: #2a2a2a;
+    color: #16004a;
     margin-left: 20px;
 }
 
 #fecha_cl {
     font-family: "Gothic";
-    color: #2a2a2a;
+    color: #21016d;
 }
 
 #alumno_cl {
     font-family: "Candara";
-    color: #2a2a2a;
+    color: #21016d;
 }
 
 #coche_cl {
     font-family: "Gothic";
-    color: #2a2a2a;
+    color: #21016d;
 }
 
 #ex {
@@ -74,7 +88,8 @@ td {
     border-right: 1px solid transparent;
     padding: 10px;
     background-color: bisque;
-    opacity: 0.8;
+    opacity: 0.7;
+    border-radius: 8px;
 }
 
 th {
@@ -83,9 +98,9 @@ th {
     padding-bottom: 10px;
     padding-top: 10px;
     font-family: "Candara";
-    color: #2a2a2a;
+    color: #16004a;
     background-color: bisque;
-    opacity: 0.8;
+    opacity: 0.7;
     border-radius: 8px;
 }
 
@@ -105,6 +120,6 @@ a {
 
 p {
     font-family: "Candara";
-    color: #2a2a2a;
+    color: #16004a;
 }
 

@@ -61,7 +61,7 @@
             var mes = fecha.getMonth() + 1;
             
         $(document).ready(function(){
-            $("#fecha_hoy").append( "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>");
+            $("#fecha_hoy").append( "<p id='saludo'>Hoy estamos a <span id='fecha_form'>" + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + "</span>. ¡Qué tengas un buen día!</p>");
         })
         }
     </script>
@@ -69,7 +69,10 @@
 <body onload="fechaHoy();">
 <?php include_once("cabecera.php") ?>
     <div id="fecha_hoy"></div>    
-<fieldset>
+<fieldset id="lista">
+    <legend>
+        <h1 id="titulo">Lista de alumnos</h1>
+    </legend>
     <form action="utiles/busqueda_alumnos.php">
         <input class="col-3" id="buscarnombre" name="buscarnombre" type="text" placeholder="Buscar por nombre">
         <input class="col-3" id="buscarapellido" name="buscarapellido" type="text" placeholder="Buscar por apellido">
@@ -82,26 +85,24 @@
     </form>
     <br>
     <?php if(!$searchingAlum){ ?>
-    <div id="enlaces">
+    <div id="enlaces"><span id='form'>
 			<!-- Código para poner los enlaces a las páginas -->
             <?php 
                 $n_paginas = ceil($total_size / $page_size);
                 $i_paginas = 1;
                 for($i_paginas = 1; $i_paginas <= $n_paginas; $i_paginas++){
             ?>
-            <a href = "lista_alumnos.php?page_num=<?php echo $i_paginas?>&page_size=<?php echo $page_size?>"><?php echo $i_paginas?></a>
+        <a href = "lista_alumnos.php?page_num=<?php echo $i_paginas?>&page_size=<?php echo $page_size?>"><?php echo $i_paginas?></a></span>
 		</div>
 		  <?php } ?>
 		<form method="get" action="lista_alumnos.php">
 			<!-- Formulario que contiene el número y cambio de tamaño de página -->
-            Mostrando <input type="number" name="page_size" min="1" max="<?php echo $total_size?>" value="<?php echo $mostrando?>"> entradas de <?php echo $total_size?><input type="number" name="page_num" value="<?php echo $page_num?>" hidden>. <input type=submit value="Cambiar">
-            <a href = "anadir/anadir_alumno.php">+ Nuevo alumno</a>
+            Mostrando <input type="number" name="page_size" min="1" max="<?php echo $total_size?>" value="<?php echo $mostrando?>"> entradas de <span id='form'><?php echo $total_size?></span><input type="number" name="page_num" value="<?php echo $page_num?>" hidden>. <input type=submit value="Cambiar"><br>
+            <a href = "anadir/anadir_alumno.php"><img src="images/anadir_alumno.png" title="Añadir alumno"></a>
 		</form>
     <br>
     <?php } ?>
-    <legend>
-    Lista de alumnos
-    </legend>
+
     <?php if($hayErrores){ ?>
     <fieldset>
         <legend>Han ocurrido errores</legend>
@@ -116,7 +117,7 @@
                 <input type="submit" value="Ver más">
           </form>
     <div class="col-11" id="alum" > <?php echo $alumno['APELLIDOS'] ?>, <?php echo $alumno['NOMBRE'] ?> 
-          <br><strong>DNI: </strong> <?php echo $alumno['DNI'] ?>
+        <br><strong>DNI: </strong> <span id='form'><?php echo $alumno['DNI'] ?></span>
         <em><?php if ($alumno['BAJA']=='SI'){ echo ' (Dado de baja)'; } ?></em>
     </div>
     <?php } ?>

@@ -18,7 +18,7 @@
             var mes = fecha.getMonth() + 1;
             
         $(document).ready(function(){
-            $("#fecha_hoy").append( "<p>Hoy estamos a " + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + ". ¡Qué tengas un buen día!</p>");
+            $("#fecha_hoy").append( "<p id='saludo'>Hoy estamos a <span id='fecha_form'>" + fecha.getDate() + "/" + mes + "/" + fecha.getFullYear() + "</span>. ¡Qué tengas un buen día!</p>");
         })
         }
     </script>
@@ -26,7 +26,7 @@
     
 <body onload="fechaHoy();">
     <?php include_once("./cabecera.php"); ?>
-    <a href="calendario.php"><img src="./images/car.png"></a>
+    <a href="calendario.php"><img src="./images/car.png" title="Cambiar a clases"></a>
     <h1 id="titulo">Calendario de Exámenes</h1>
     <div id="fecha_hoy"></div>
     <div id="ex_t">
