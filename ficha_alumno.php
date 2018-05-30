@@ -35,10 +35,13 @@
     <meta charset="utf-8">
     <script src="js/notificaciones.js" type="text/javascript">
     </script>
+        <link rel="stylesheet" type="text/css" href="./css/ficha_alumno.css">
 </head>
 <body onload="notificationTasas();">
-    <a href="lista_alumnos.php">Volver a lista</a>
-    <fieldset>
+    <div id="izquierda" class="col-4">
+    <fieldset id="datos_alumno">
+      <a href="lista_alumnos.php">Volver a lista</a>
+        <a href="calendario.php">Al calendario</a>
         <label>
             <?php echo ($alumno['NOMBRE'] . " " . $alumno['APELLIDOS']) ?>
             <input type="hidden" id="nombre_alumno" name="nombre_alumno" value="<?php echo $alumno['NOMBRE'] ?>">
@@ -64,8 +67,28 @@
             <p><strong>Estudios: </strong> <?php echo $alumno['ESTUDIOS'] ?>
         </fieldset>
     </fieldset>
-    <a href="calendario.php">Al calendario</a>
-    <fieldset>
+    <fieldset id="compras">
+        <legend>
+        Compras
+        </legend>
+        <a href="gestion_autoescuela.php">A gestión de productos</a>
+        <table>
+            <tr>
+                <th>Concepto</th> <th>Fecha</th> <th>Precio</th>
+            </tr>
+            <?php foreach($compras_alumno as $compra){ ?>
+            <tr>
+                <td><?php echo $compra['PRODUCTO'] ?></td>
+                <td><?php echo $compra['FECHA_COMPRA'] ?></td>
+                <td><?php echo $compra['PRECIO_PROD_FACT'] ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+        <!-- <p><strong>Clases prácticas: </strong> <?php echo $clasesPracticasPagadas ?></p> -->
+    </fieldset>
+        </div>
+    <div id="centro" class="col-4">
+    <fieldset id="clases_teoricas">
         <legend>
             Clases teoricas
         </legend>
@@ -102,7 +125,85 @@
             </table>
         </fieldset>
     </fieldset>
-    <fieldset>
+    <fieldset id="clases_practicas">
+        <legend>
+        Clases practicas
+        </legend>
+        <fieldset>
+            <legend>
+            Añadir clase practica
+            </legend>
+            <form action="acciones/accion_anadir_practica.php">
+                <input type="text" value="<?php echo $id ?>" name="id_alumno" hidden>
+                <p>Profesor: <select name="id_prof">
+                    <?php foreach ($profesores as $profesor){ ?>
+                    <option value="<?php echo $profesor['NUM_PROF'] ?>"><?php echo $profesor['NOMBRE'] . " " . $profesor['APELLIDOS'] ?></option>
+                    <?php } ?>
+                    </select>
+                Coche: <select name="id_coche">
+                    <?php foreach ($coches as $coche){ ?>
+                    <option value="<?php echo $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></option>
+                    <?php } ?>
+                    </select>
+                Fecha: <input type="date" name="fecha_clase" required> 
+                ¿Reciclaje? <select name="reciclaje">
+                    <option value="SI">Sí</option>
+                    <option value="NO" selected>No</option>
+                    </select>
+                <input type="submit" value="Añadir"></p>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Puntuacion actual
+            </legend>
+            <?php $puntoPalabra = $puntosActuales == 1? "punto" : "puntos" ?>
+            <p>Actualmente, tiene <?php echo $puntosActuales . " " . $puntoPalabra ?> de 20.</p>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Clases recibidas
+            </legend>
+            <table>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Valoracion</th>
+                    <th>Incidencias</th>
+                </tr>
+            <?php foreach($clasesRecibidas as $cr){ ?>
+                <tr>
+                    <td><?php echo $cr['FECHA'] ?></td>
+                    <td><?php echo $cr['VALORACION'] ?></td>
+                    <td><?php echo $cr['INCIDENCIA'] ?></td>
+                </tr>   
+            <?php } ?>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Clases por recibir
+            </legend>
+            <table>
+                <tr>
+                    <th>Fecha</th>
+                </tr>
+            <?php foreach($clasesPorRecibir as $cpr){ ?>
+                <tr>
+                    <td><?php echo $cpr['FECHA'] ?></td>
+                    <form action="anadir/anadir_valoracion.php">
+                        <input type="text" name="id_alumno" value="<?php echo $id ?>" hidden />
+                        <input type="number" name="id_clase" value="<?php echo $cpr['NUM_CLASE'] ?>" hidden />
+                        <input type="number" name="id_coche" value="<?php echo $cpr['NUM_COCHE'] ?>" hidden />
+                    <td><input type="submit" value="Práctica realizada" /></td>
+                    </form>
+                </tr>
+            <?php } ?>
+            </table>
+        </fieldset>
+    </fieldset>
+        </div>
+    <div id="derecha" class="col-4">
+    <fieldset id="examenes">
         <legend>Exámenes</legend>
         <fieldset>
             <legend>Examenes teóricos</legend>
@@ -191,100 +292,6 @@
             </fieldset>
         </fieldset>
     </fieldset>
-    <fieldset>
-        <legend>
-        Clases practicas
-        </legend>
-        <fieldset>
-            <legend>
-            Añadir clase practica
-            </legend>
-            <form action="acciones/accion_anadir_practica.php">
-                <input type="text" value="<?php echo $id ?>" name="id_alumno" hidden>
-                <p>Profesor: <select name="id_prof">
-                    <?php foreach ($profesores as $profesor){ ?>
-                    <option value="<?php echo $profesor['NUM_PROF'] ?>"><?php echo $profesor['NOMBRE'] . " " . $profesor['APELLIDOS'] ?></option>
-                    <?php } ?>
-                    </select>
-                Coche: <select name="id_coche">
-                    <?php foreach ($coches as $coche){ ?>
-                    <option value="<?php echo $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></option>
-                    <?php } ?>
-                    </select>
-                Fecha: <input type="date" name="fecha_clase" required> 
-                ¿Reciclaje? <select name="reciclaje">
-                    <option value="SI">Sí</option>
-                    <option value="NO" selected>No</option>
-                    </select>
-                <input type="submit" value="Añadir"></p>
-            </form>
-        </fieldset>
-        <fieldset>
-            <legend>
-                Puntuacion actual
-            </legend>
-            <?php $puntoPalabra = $puntosActuales == 1? "punto" : "puntos" ?>
-            <p>Actualmente, tiene <?php echo $puntosActuales . " " . $puntoPalabra ?> de 20.</p>
-        </fieldset>
-        <fieldset>
-            <legend>
-                Clases recibidas
-            </legend>
-            <table>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Valoracion</th>
-                    <th>Incidencias</th>
-                </tr>
-            <?php foreach($clasesRecibidas as $cr){ ?>
-                <tr>
-                    <td><?php echo $cr['FECHA'] ?></td>
-                    <td><?php echo $cr['VALORACION'] ?></td>
-                    <td><?php echo $cr['INCIDENCIA'] ?></td>
-                </tr>   
-            <?php } ?>
-            </table>
-        </fieldset>
-        <fieldset>
-            <legend>
-                Clases por recibir
-            </legend>
-            <table>
-                <tr>
-                    <th>Fecha</th>
-                </tr>
-            <?php foreach($clasesPorRecibir as $cpr){ ?>
-                <tr>
-                    <td><?php echo $cpr['FECHA'] ?></td>
-                    <form action="anadir/anadir_valoracion.php">
-                        <input type="text" name="id_alumno" value="<?php echo $id ?>" hidden />
-                        <input type="number" name="id_clase" value="<?php echo $cpr['NUM_CLASE'] ?>" hidden />
-                        <input type="number" name="id_coche" value="<?php echo $cpr['NUM_COCHE'] ?>" hidden />
-                    <td><input type="submit" value="Práctica realizada" /></td>
-                    </form>
-                </tr>
-            <?php } ?>
-            </table>
-        </fieldset>
-    </fieldset>
-    <fieldset>
-        <legend>
-        Compras
-        </legend>
-        <a href="gestion_autoescuela.php">A gestión de productos</a>
-        <table>
-            <tr>
-                <th>Concepto</th> <th>Fecha</th> <th>Precio</th>
-            </tr>
-            <?php foreach($compras_alumno as $compra){ ?>
-            <tr>
-                <td><?php echo $compra['PRODUCTO'] ?></td>
-                <td><?php echo $compra['FECHA_COMPRA'] ?></td>
-                <td><?php echo $compra['PRECIO_PROD_FACT'] ?></td>
-            </tr>
-            <?php } ?>
-        </table>
-        <!-- <p><strong>Clases prácticas: </strong> <?php echo $clasesPracticasPagadas ?></p> -->
-    </fieldset>
+        </div>
 </body>
 </html>
