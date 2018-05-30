@@ -86,6 +86,7 @@ th {
     color: #2a2a2a;
     background-color: bisque;
     opacity: 0.8;
+    border-radius: 8px;
 }
 
 table {
