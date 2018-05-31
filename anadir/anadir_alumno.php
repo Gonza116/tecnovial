@@ -25,9 +25,11 @@
 <head>
     <title>Tecnovial: Creando nuevo alumno</title>
     <script src="../js/validacion_alumno.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
     <meta charset="utf-8">
 </head>
-<body>
+<body id="formulario">
+    <h1>Añadir alumno</h1>
     <?php if($hayErrores){ ?>
     <fieldset>
         <legend>Han ocurrido errores</legend>

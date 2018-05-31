@@ -29,9 +29,11 @@
     <title>Tecnovial: Creando nuevo profesor</title>
     <meta charset="utf-8">
     <script src="../js/validacion_profesor.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
 </head>
 
-<body>
+<body id="formulario">
+    <h1>Añadir nuevo profesor</h1>
     <?php if($hayErrores){ ?>
     <fieldset>
         <legend>Han ocurrido errores</legend>

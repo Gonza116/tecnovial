@@ -24,8 +24,10 @@
     <title>Tecnovial: Añadiendo nuevo coche</title>
     <meta charset="utf-8">
     <script src="../js/validacion_coche.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
 </head>
-<body>
+<body id="formulario">
+    <h1>Añadir nuevo coche</h1>
     <?php if($hayErrores){ ?>
     <fieldset>
         <legend>Han ocurrido errores</legend>
@@ -37,28 +39,26 @@
     
     if($error_sesion){ ?>
         <fieldset>
-        <legend>Añadir nuevo coche</legend>
         <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
-            <p>
+            
                 Matrícula: <input type="text" name="matricula" id="matricula" value="<?php echo $coche_mal['matricula'] ?>"/> <div id="div_matricula"></div>
-                Kilometraje: <input type="number" name="kms" value="<?php echo $coche_mal['kms'] ?>" />
-                Último repostaje: <input type="date" name="repostaje" value="<?php echo $coche_mal['repostaje'] ?>" />
-                Última ITV: <input type="date" name="itv" value="<?php echo $coche_mal['itv'] ?>" />
+                Kilometraje: <input type="number" name="kms" value="<?php echo $coche_mal['kms'] ?>" /><br>
+                Último repostaje: <input type="date" name="repostaje" value="<?php echo $coche_mal['repostaje'] ?>" /><br>
+                Última ITV: <input type="date" name="itv" value="<?php echo $coche_mal['itv'] ?>" /><br>
                 <input type="submit" value="Añadir" />
-            </p>
+            
         </form>
     </fieldset>
     <?php } else { ?>
         <fieldset>
-        <legend>Añadir nuevo coche</legend>
         <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
-            <p>
+ 
                 Matrícula: <input type="text" name="matricula"id="matricula" /> <div id="div_matricula"></div>
-                Kilometraje: <input type="number" name="kms" value="0" />
-                Último repostaje: <input type="date" name="repostaje" />
-                Última ITV: <input type="date" name="itv" />
+                Kilometraje: <input type="number" name="kms" value="0" /><br>
+                Último repostaje: <input type="date" name="repostaje" /><br>
+                Última ITV: <input type="date" name="itv" /><br>
                 <input type="submit" value="Añadir" />
-            </p>
+  
         </form>
     </fieldset>  
     <?php } ?>

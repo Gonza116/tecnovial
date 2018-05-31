@@ -2,14 +2,12 @@
 box-sizing: border-box; /*que los elementos lleven incluidos el margen y el padding*/
 }
 
-body#formulario {
+#formulario {
     padding-left: 40px;
-    border: 1px solid black; 
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 50px;
     max-width: 50%;
-    text-align: center;
+    text-align: left;
+    margin: auto;
+    background-image: url(../images/tecno.png);
 }
 
 input {
@@ -18,10 +16,12 @@ input {
 
 #content {
     margin: auto;
+    
 }
 
 form {
     margin: auto;
+    /* color del formularo */
 }
 
 

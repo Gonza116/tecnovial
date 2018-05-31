@@ -10,8 +10,9 @@
     <title>Tecnovial: Añadiendo cobro luz</title>
     <meta charset="utf-8" />
     <script src = "../js/validacion_gasto_luz.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
 </head>
-<body>
+<body id="formulario">
     <h1>Añadiendo nuevo cobro de luz</h1>
     <form action="../acciones/accion_anadir_gasto_luz.php" onsubmit="return validarFormulario()">
         <p>Fecha del cobro: <input type="date" name="fecha" id="fecha" required/></p>
