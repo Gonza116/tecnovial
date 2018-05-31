@@ -13,8 +13,6 @@
             <li id="alumnos"><input type="submit" name="gestion_de_alumnos" value="Gestión de alumnos"></li>
             <li id="autoescuela"><input type="submit" name="gestion_de_autoescuela" value="Gestión de autoescuela"></li>
             <li  id="calendario"><input type="submit" name="calendario" value="Calendario"></li>
-            <li class="icon">
-				<a href="javascript:void(0);" onclick="myToggleMenu()">&#9776;</a>
             </ul>
         </form>
         </nav>

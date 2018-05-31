@@ -61,10 +61,10 @@
 <?php include_once("cabecera.php") ?>
     <div id="fecha_hoy"></div>
     <?php if($hayErrores){ ?>
-    <fieldset>
-        <legend>Han ocurrido errores</legend>
+    <fieldset id="errores">
+        <legend id="errores">Han ocurrido errores</legend>
         <?php foreach($error as $e){ ?>
-        <p><?php echo $e ?></p>
+        <p id="errores"><?php echo $e ?></p>
         <?php } ?>
     </fieldset>
     <?php } ?>
@@ -80,15 +80,15 @@
                     <?php foreach($alumnos as $a){ ?>
                     <option value="<?php echo $a['NUM_ALUM'] ?>"><?php echo $a['NOMBRE'] . " " . $a['APELLIDOS']?></option>
                     <?php } ?>
-                </select><br>
+                </select><br><br>
                 Producto:
                 <select name="id_producto" required>
                     <?php foreach($productosActivos as $pa){ ?>
                     <option value="<?php echo $pa['COD_PROD'] ?>"><?php echo $pa['PRODUCTO'] ?></option>
                     <?php } ?>
-                </select><br>
+                </select><br><br>
                 Fecha:
-                <input type="date" name="fecha_compra" required />
+                <input type="date" name="fecha_compra" required /><br><br>
                 <input id="bot" type="submit" value="Añadir compra" /><br>
             </form>
         </fieldset>
@@ -155,12 +155,14 @@
             <legend id="form_l">Crear nuevo producto</legend>
             <form action="acciones/accion_anadir_producto.php">
                 <p>
-                Nombre del producto: <input type="text" name="nombre_prod" required /><br>
-                Precio del producto: <input type="number" name="precio_prod" value="10" /> € <input id="bot" type="submit" value="Añadir" /><br>
+                Nombre del producto: <input type="text" name="nombre_prod" required /><br><br>
+                Precio del producto: <input type="number" name="precio_prod" value="10" /> € <br><br><input id="bot" type="submit" value="Añadir" />
                 </p>
             </form>
         </fieldset>
     </fieldset>
+    </fieldset>
+    <fieldset id="derecha" class="col-6">
     <fieldset id="form_f">
         <legend id="titulo">Coches</legend>
         
@@ -193,8 +195,6 @@
         </table>
         </fieldset>
     </fieldset>
-    </fieldset>
-    <fieldset id="derecha" class="col-6">
     <fieldset id="form_f">
         <legend id="titulo">Gastos</legend>
         <form action="gestion_autoescuela.php" method="post">

@@ -32,14 +32,17 @@ html{
 
 #cod_ad {
     position: fixed;
-	top: 44%;
+	bottom: 5%;
     left: 43%;
     text-align: center;
     font-family: "Candara";
     font-size: 15px;
-    color: white;
+    color: #00367E;
     text-shadow: 3px 3px 2px black;
     opacity: 1;
+    background-color: #A4FCFF;
+    border-radius: 8px;
+    padding: 3px;
 }
 
 #log_b {
@@ -78,8 +81,7 @@ html{
    font-family: "Candara";
    border: 1px solid;
    border-radius: 8px;
-   background-color: aliceblue;
+   background-color: rgb(240, 248, 255, 0.75);
    padding: 5px;
    border-color: aliceblue;
-   opacity: 0.75;
 }

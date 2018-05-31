@@ -98,9 +98,9 @@
             <legend id="form_l">Añadir test hecho</legend>
             <form action="acciones/accion_anadir_test.php">
                 <p><input name="num_alum" type="text" value="<?php echo $id ?>" hidden>
-                Fecha del test: <input name="fecha" type="date" required><br>
-                Número del test: <input name="num_test" type="number" min="1" max="90" value="1"><br>
-                Número de fallos: <input name="num_fallos" type="number" min="0" max="30" value="0">
+                Fecha del test: <input name="fecha" type="date" required><br><br>
+                Número del test: <input name="num_test" type="number" min="1" max="90" value="1"><br><br>
+                Número de fallos: <input name="num_fallos" type="number" min="0" max="30" value="0"><br><br>
                 <input id="bot" type="submit" value="Añadir test"></p>
             </form>
         </fieldset>
@@ -141,17 +141,17 @@
                     <?php foreach ($profesores as $profesor){ ?>
                     <option value="<?php echo $profesor['NUM_PROF'] ?>"><?php echo $profesor['NOMBRE'] . " " . $profesor['APELLIDOS'] ?></option>
                     <?php } ?>
-                    </select><br>
+                    </select><br><br>
                 Coche: <select name="id_coche">
                     <?php foreach ($coches as $coche){ ?>
                     <option value="<?php echo $coche['NUM_COCHE'] ?>"><?php echo $coche['MATRICULA'] ?></option>
                     <?php } ?>
-                    </select><br>
-                Fecha: <input type="date" name="fecha_clase" required> <br>
+                    </select><br><br>
+                Fecha: <input type="date" name="fecha_clase" required> <br><br>
                 ¿Reciclaje? <select name="reciclaje">
                     <option value="SI">Sí</option>
                     <option value="NO" selected>No</option>
-                    </select>
+                    </select><br><br>
                 <input id="bot" type="submit" value="Añadir"></p>
             </form>
         </fieldset>

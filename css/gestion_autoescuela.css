@@ -119,3 +119,8 @@ td, th  {
 img {
     margin-left: 20px;
 }
+
+#errores{
+    color: red;
+    border-color: red;
+}

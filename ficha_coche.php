@@ -64,7 +64,7 @@
     <fieldset id="centro" class="col-4">
         <legend id="form_l">Último repostaje</legend>
         <p><strong>Fecha: </strong> <span id="form"><?php echo $coche['ULTIMO_REPOSTAJE'] ?></span></p>
-        <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
+        <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMO_REPOSTAJE'] ?>"/>
         <p><strong>Fecha del nuevo repostaje:</strong></p>
             <form action="ficha_coche.php" onsubmit="return notificationRepAnterior();">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
