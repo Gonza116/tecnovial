@@ -1,6 +1,25 @@
  * {
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Gothic'; /*a name to be used later*/
+    src: url('../fonts/Gothic.ttf'); /*URL to font*/
+}
+
+body {
+    background-image: url(../images/tecno.png);
+}
+
+html {
+    font-family: "Candara";
+}
+
 .row::after {
     content: "";
     clear: both;

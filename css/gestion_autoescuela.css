@@ -1,6 +1,24 @@
  * {
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Gothic'; /*a name to be used later*/
+    src: url('../fonts/Gothic.ttf'); /*URL to font*/
+}
+
+body {
+    background-image: url(../images/tecno.png);
+}
+
+html {
+    font-family: "Candara";
+}
 .row::after {
     content: "";
     clear: both;
@@ -24,15 +42,52 @@
 
 html, body {margin:0; padding:0; height:100%;}
 
+#saludo {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #16004a;
+	text-shadow: 2px 2px 2px #999999;
+}
+
+#fecha_form {
+    font-family: "Gothic";
+    font-size: 18px;
+}
+
+#form {
+    font-family: "Gothic";
+    font-size: 14.5px;
+}
+
+#bot {
+	background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 5px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    padding-bottom: 2px;
+}
+
 #derecha {
-    border-color: aquamarine;
+    border-color: transparent;
     float: left;
 }
 
 #izquierda {
-    border-color: brown;
+    border-color: transparent;
     float: left;
     width: 49%;
+}
+
+#titulo {
+    margin-top: 0px;
+    font-family: "Candara";
+    color: #16004a;
+    font-size: 30px;
 }
 
 table {
@@ -42,4 +97,22 @@ table {
 td, th  {
     text-align: center;
     text-align: center;
+}
+
+#form_f {
+    border-color: transparent;
+}
+
+#form_f1 {
+    background-color: bisque;
+    opacity: 0.7;
+    color: midnightblue;
+    border-color: transparent;
+    border-radius: 6px;
+}
+
+#form_l {
+    color: #16004a;
+    font-size: 17px;
+    text-shadow: 2px 2px 2px #999999;
 }
