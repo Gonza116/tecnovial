@@ -24,8 +24,9 @@
     <meta charset="utf-8">
     <script src="../js/notificaciones.js" type="text/javascript"></script>
     <title>Añadiendo valoración</title>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
 </head>
-<body>
+<body id="formulario">
     <form action="../acciones/accion_anadir_valoracion.php" method="post">
         <input type="number" id="kms_anteriores" name="kms_anteriores" value="<?php echo $km ?>" hidden>
         <input type="text" name="id_alumno" value="<?php echo $id_alum ?>" hidden>

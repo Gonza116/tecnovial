@@ -12,8 +12,9 @@
     <title>Tecnovial: Añadiendo cobro seguro</title>
     <meta charset="utf-8" />
     <script src="../js/validacion_seguro_coche.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/formularios.css">
 </head>
-<body>
+<body id="formulario">
     <h1>Añadiendo nuevo cobro de seguro del coche</h1>
     <form action="../acciones/accion_anadir_seguro_coche.php" onsubmit="return validarFormulario();">
         <p>Coche:
