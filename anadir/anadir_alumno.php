@@ -60,7 +60,7 @@
                 <?php } ?>
                     <option value="">No</option>
                 </select>
-            <p><input type="submit" value="Enviar"> <input type="reset" value="Reestablecer"></p>
+            <p><input id="bot" type="submit" value="Enviar"> <input id="bot" type="reset" value="Reestablecer"></p>
     </form>
     <?php } else { ?>
         <form action="../acciones/accion_anadir_alumno.php" method="post" onsubmit="return validarFormulario();">
@@ -83,7 +83,7 @@
             <?php } ?>
                 <option value="">No</option>
             </select>
-        <p><input type="submit" value="Enviar"> <input type="reset" value="Reestablecer"></p>
+        <p><input id="bot" type="submit" value="Enviar"> <input id="bot" type="reset" value="Reestablecer"></p>
     </form>
     <?php } ?>
     

@@ -19,7 +19,7 @@
         <p>Fecha del proximo cobro: <input type="date" name="proximo_cobro" id="proximo_cobro" required/></p>
         <p>Coste: <input type="text" name="coste" id="coste" required/></p> <div id="div_coste"></div>
         <p>Gasto en kWh: <input type="text" name="gasto_kwh" id="gasto_kwh" required/></p><div id="div_gasto_kwh"></div>
-        <p><input type="submit" value="Añadir" /> <input type="reset" value="Limpiar" /></p>
+        <p><input id="bot" type="submit" value="Añadir" /> <input id="bot" type="reset" value="Limpiar" /></p>
     </form>
 </body>
 </html>

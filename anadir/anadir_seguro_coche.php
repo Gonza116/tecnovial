@@ -28,7 +28,7 @@
         <p>Fecha de entrada en vigor: <input type="date" name="fecha" /></p>
         <p>Fecha de vencimiento: <input type="date" name="fecha_vencimiento" /></p>
         <p>Precio anual del seguro: <input type="text" name="coste" id="coste" /></p> <div id="div_coste"></div>
-        <p><input type="submit" value="Añadir" /> <input type="reset" value="Limpiar" /></p>
+        <p><input id="bot" type="submit" value="Añadir" /> <input id="bot" type="reset" value="Limpiar" /></p>
     </form>
 </body>
 </html>

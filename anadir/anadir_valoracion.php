@@ -40,7 +40,7 @@
         <p>Kilómetros recorridos: <input id="kms" name="kms" value="30" type="number"></p>
         <p>Incidencias: 
         <textarea name="incidencias" cols="40" rows="5"></textarea></p>
-        <input type="submit" value="Guardar" onclick="notificationOil();">
+        <input id="bot" type="submit" value="Guardar" onclick="notificationOil();">
     </form>
 </body>
 </html>

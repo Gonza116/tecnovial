@@ -19,7 +19,7 @@
         <p>Fecha del cobro: <input type="date" name="fecha" required /></p>
         <p>Fecha de renovacion: <input type="date" name="fecha_renovacion" required/></p>
         <p>Precio del seguro: <input type="text" name="coste" id="costeSeguroLocal" required/></p> <div id="div_costeSeguroLocal"></div>
-        <p><input type="submit" value="Añadir" /> <input type="reset" value="Limpiar" /></p>
+        <p><input id="bot" type="submit" value="Añadir" /> <input id="bot" type="reset" value="Limpiar" /></p>
     </form>
 </body>
 </html>

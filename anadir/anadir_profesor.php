@@ -50,7 +50,7 @@
         <!-- php if($fail_pass){ ?>
         <p><strong>Las contraseñas no coinciden</strong></p>
         php } -->
-        <input type="submit" value="Dar de alta">
+        <input id="bot" type="submit" value="Dar de alta">
     </form>
 </body>
 </html>

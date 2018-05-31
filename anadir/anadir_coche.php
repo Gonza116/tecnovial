@@ -38,29 +38,29 @@
     <?php } 
     
     if($error_sesion){ ?>
-        <fieldset>
+        <div>
         <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
             
                 Matrícula: <input type="text" name="matricula" id="matricula" value="<?php echo $coche_mal['matricula'] ?>"/> <div id="div_matricula"></div>
                 Kilometraje: <input type="number" name="kms" value="<?php echo $coche_mal['kms'] ?>" /><br>
                 Último repostaje: <input type="date" name="repostaje" value="<?php echo $coche_mal['repostaje'] ?>" /><br>
                 Última ITV: <input type="date" name="itv" value="<?php echo $coche_mal['itv'] ?>" /><br>
-                <input type="submit" value="Añadir" />
+                <input id="bot" type="submit" value="Añadir" />
             
         </form>
-    </fieldset>
+    </div>
     <?php } else { ?>
-        <fieldset>
+        <div>
         <form action="../acciones/accion_anadir_coche.php" onsubmit="return validarFormulario();">
  
                 Matrícula: <input type="text" name="matricula"id="matricula" /> <div id="div_matricula"></div>
                 Kilometraje: <input type="number" name="kms" value="0" /><br>
                 Último repostaje: <input type="date" name="repostaje" /><br>
                 Última ITV: <input type="date" name="itv" /><br>
-                <input type="submit" value="Añadir" />
+                <input id="bot" type="submit" value="Añadir" />
   
         </form>
-    </fieldset>  
+    </div>  
     <?php } ?>
 </body>
 </html>
