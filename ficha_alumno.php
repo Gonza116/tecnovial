@@ -208,7 +208,7 @@
     <fieldset id="form_f">
         <legend id="titulo">Exámenes</legend>
         <fieldset id="form_fe">
-            <legend id="form_fex">Examenes teóricos</legend>
+            <legend id="form_fex">Exámenes teóricos</legend>
             <fieldset id="form_f1">
                 <legend id="form_l">Exámenes hechos</legend>
                 <table>
@@ -251,7 +251,7 @@
             </fieldset>
         </fieldset>
         <fieldset id="form_fe">
-            <legend id="form_fex">Examenes prácticos</legend>
+            <legend id="form_fex">Exámenes prácticos</legend>
             <fieldset id="form_f1">
                 <legend id="form_l">Exámenes hechos</legend>
                 <table>
@@ -285,7 +285,7 @@
                 </table>
             </fieldset>
             <fieldset id="form_f1">
-                <legend id="form_l">Añadir examen practico</legend>
+                <legend id="form_l">Añadir examen práctico</legend>
                 <form action="acciones/accion_anadir_examen_p.php" onsubmit="return notificationPExams();">
                     <input name="id" type="text" value="<?php echo $id ?>" hidden />
                     <input name="fecha_ex_p" id="fecha_ex_p" type="date" required/>

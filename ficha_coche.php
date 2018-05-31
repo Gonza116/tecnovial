@@ -49,32 +49,32 @@
     <title>Tecnovial: Viendo coche</title>
 </header>
 <body onload="notificationITV();">
-    <h1>Información del coche</h1>
+    <h1 id="titulo">Información del coche</h1>
     <fieldset id="izquierda" class="col-4">
-        <legend>Última ITV</legend>
-        <p><strong>Fecha: </strong> <?php echo $coche['ULTIMA_ITV'] ?></p>
+        <legend id="form_l">Última ITV</legend>
+        <p><strong>Fecha: </strong> <span id="form"><?php echo $coche['ULTIMA_ITV'] ?></span></p>
         <input type="hidden" id="ult_itv" name="ult_itv" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha de la nueva ITV:</strong></p>
             <form action="ficha_coche.php" onsubmit="return notificationITVAnterior();">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
                 <input type="date" id="fecha_nueva_itv" name="fecha_nueva_itv" required/><div id="div_fecha_nueva_itv"></div>
-                <input type="submit" value="Actualizar fecha" />
+                <input id="bot" type="submit" value="Actualizar fecha" />
             </form> 
     </fieldset>
     <fieldset id="centro" class="col-4">
-        <legend>Último repostaje</legend>
-        <p><strong>Fecha: </strong> <?php echo $coche['ULTIMO_REPOSTAJE'] ?></p>
+        <legend id="form_l">Último repostaje</legend>
+        <p><strong>Fecha: </strong> <span id="form"><?php echo $coche['ULTIMO_REPOSTAJE'] ?></span></p>
         <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
         <p><strong>Fecha del nuevo repostaje:</strong></p>
             <form action="ficha_coche.php" onsubmit="return notificationRepAnterior();">
                 <input type="number" name="id_coche" value="<?php echo $id_coche ?>" hidden />
                 <input type="date" id="fecha_nuevo_repostaje" name="fecha_nuevo_repostaje" required/><div id="div_fecha_nuevo_rep"></div>
-                <input type="submit" value="Actualizar fecha"/>
+                <input id="bot" type="submit" value="Actualizar fecha"/>
             </form>  
     </fieldset>
     <fieldset id="derecha" class="col-4">
-        <legend>Kilometraje total</legend>
-        <p><strong>Kilómetros totales: </strong> <?php echo $coche['KMS'] ?> kilómetros</p>
+        <legend id="form_l">Kilometraje total</legend>
+        <p><strong>Kilómetros totales: </strong> <span id="form"><?php echo $coche['KMS'] ?></span> kilómetros</p>
         <p><strong>Desglose: </strong></p>
         <table>
             <tr>
@@ -83,8 +83,8 @@
             </tr>
             <?php foreach($clases_coche as $cp){ ?>
             <tr>
-                <td><?php echo $cp['FECHA'] ?></td>
-                <td><?php echo $cp['KMS_CLASE'] ?></td>
+                <td><span id="form"><?php echo $cp['FECHA'] ?></span></td>
+                <td><span id="form"><?php echo $cp['KMS_CLASE'] ?></span></td>
             </tr>
             <?php } ?>
         </table>
