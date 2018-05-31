@@ -6,7 +6,7 @@ function consultarProfesores($conexion) {
         return $conexion->query($consulta);
     } catch(PDOException $e) {
         $_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -18,7 +18,7 @@ function passProfesor($conexion, $profesor_id) {
 		return $stmt;
 	} catch(PDOException $e) {
         $_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -32,7 +32,7 @@ function nuevoProfesor($conexion,$nuevoProfesor) {
 		return "";
 	} catch(PDOException $e) {
         $_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -44,7 +44,7 @@ function borrarProfesor($conexion, $id){
         return $stmt;
     } catch(PDOException $e) {
         $_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 ?>

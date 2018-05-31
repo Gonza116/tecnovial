@@ -11,7 +11,7 @@ function consultarAlumnos($conexion) {
         return $conexion->query($consulta);
     } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -34,7 +34,7 @@ function nuevoAlumno($conexion,$nuevoAlumno) {
 		return "";
 	} catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -46,7 +46,7 @@ function consultaAlumno($conexion, $id){
         return $stmt->fetch();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -56,7 +56,7 @@ function consultarAlumnosSinTasas($conexion) {
         return $conexion->query($consulta);
     } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -69,7 +69,7 @@ function consultaPracticasPorHacerAlumno($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -81,7 +81,7 @@ function consultaPracticasAlumno($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -95,7 +95,7 @@ function consultaPracticasPagadasAlumno($conexion, $id){
 		return  $total;
 	 } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 } 
 
@@ -112,7 +112,7 @@ function anadirClasePractica($conexion, $id_alum, $id_prof, $id_coche, $fecha, $
 		return "";
 	 } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -129,7 +129,7 @@ function anadirValoracion($conexion, $id_alum, $id_clase, $id_coche, $valoracion
 		return "";
 	 } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -143,7 +143,7 @@ function puntosAlumno($conexion, $id_alum){
         return  $suma;
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -159,7 +159,7 @@ function anadirClaseTeorica($conexion, $num_alum, $fecha, $num_test, $num_fallos
         return "";
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -171,7 +171,7 @@ function consultarClasesTeoricas($conexion, $num_alum){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -185,7 +185,7 @@ function anadirExamenTeorico($conexion, $id, $fecha){
         return "";
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -199,7 +199,7 @@ function anadirExamenPractico($conexion, $id, $fecha){
         return "";
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -213,7 +213,7 @@ function resultadoExamenTeorico($conexion, $id_ex, $id, $apto){
         return "";
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -227,7 +227,7 @@ function resultadoExamenPractico($conexion, $id_ex, $id, $apto){
         return "";
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -239,7 +239,7 @@ function consultarExamenesTeoricosHechos($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -251,7 +251,7 @@ function consultarExamenesTeoricosNoHechos($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -263,7 +263,7 @@ function consultarExamenesPracticosHechos($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -275,7 +275,7 @@ function consultarExamenesPracticosNoHechos($conexion, $id){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -286,7 +286,7 @@ function consultarTodosExamenesPracticos($conexion){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -297,7 +297,7 @@ function consultarTodosExamenesTeoricos($conexion){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -309,7 +309,7 @@ function consultarTodasClasesPracticas($conexion, $id_prof){
         return $stmt->fetchAll();
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -320,7 +320,7 @@ function darDeBaja($conexion, $id){
         $stmt->execute();
     } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -333,7 +333,7 @@ function comprobarPreparadoT($conexion, $id_alumno){
         return $res;
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
     
@@ -346,7 +346,7 @@ function comprobarPreparadoP($conexion, $id_alumno){
         return $res;
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 
@@ -359,7 +359,7 @@ function borrarAlumno($conexion, $id_alumno){
         return $res;
      } catch(PDOException $e) {
 		$_SESSION['excepcion'] = $e->getMessage();
-        header("Location: excepcion.php");
+        header("Location: ../excepcion.php");
     }
 }
 

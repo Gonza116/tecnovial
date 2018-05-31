@@ -78,9 +78,7 @@
         $excepcion = nuevoAlumno($conexion, $nuevoAlumno);
         if ($excepcion<>"") {
                 $_SESSION["excepcion"] = $excepcion;
-                $_SESSION["destino"] = "index.php";
-                echo 'Ha ocurrido un error añadiendo el profesor';
-                echo $excepcion;
+                header("Location: ../excepcion.php");
         } else Header("Location: ../lista_alumnos.php");
     }
 

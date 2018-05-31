@@ -11,7 +11,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -21,7 +21,7 @@
             return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -31,7 +31,7 @@
             return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -41,7 +41,7 @@
             return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -52,7 +52,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -62,7 +62,7 @@
             return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -72,7 +72,7 @@
             return $conexion->query($consulta);
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 ?>

@@ -12,7 +12,7 @@
             return $coste_total;
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -23,7 +23,7 @@
             return $stmt->fetchAll();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -39,7 +39,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -50,7 +50,7 @@
             return $stmt->fetchAll();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -68,7 +68,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -79,7 +79,7 @@
             return $stmt->fetchAll();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -95,7 +95,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 
@@ -106,7 +106,7 @@
             return $stmt->fetchAll();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
    
@@ -121,7 +121,7 @@
             $stmt->execute();
         } catch(PDOException $e) {
             $_SESSION['excepcion'] = $e->getMessage();
-            header("Location: excepcion.php");
+            header("Location: ../excepcion.php");
         }
     }
 ?>
