@@ -6,10 +6,12 @@
     $conexion = crearConexionBD();
 
     function getAge($then, $cump) {
-    $then = date('Ymd', strtotime($then));
-    $cump = date('Ymd', strtotime($cump));
-    $diff = $then - $cump;
-    return substr($diff, 0, -4);
+        $fecha_ex = DateTime::createFromFormat('Y-m-d', $then);
+        $fecha_cu = DateTime::createFromFormat('d/m/y', $cump);
+        $diff = $fecha_ex->diff($fecha_cu);
+
+        return $diff->y;
+
     }
 
     if(isset($_REQUEST['id'])){
@@ -21,6 +23,7 @@
         if(trim($_REQUEST['fecha_ex_p'], " ") == ""){
             $error['fecha'] = "La fecha del examen no puede estar vacía";
         }
+        
         if(getAge($_REQUEST['fecha_ex_p'], $cump) < 18){
             $error['edad'] = "El alumno no puede ser menor de edad en la fecha del examen";
         }
