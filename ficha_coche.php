@@ -45,11 +45,12 @@
     <meta charset="utf-8">
     <script src="js/notificaciones.js" type="text/javascript">
     </script>
+    <link rel="stylesheet" type="text/css" href="./css/ficha_coche.css">
     <title>Tecnovial: Viendo coche</title>
 </header>
 <body onload="notificationITV();">
     <h1>Información del coche</h1>
-    <fieldset>
+    <fieldset id="izquierda" class="col-4">
         <legend>Última ITV</legend>
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMA_ITV'] ?></p>
         <input type="hidden" id="ult_itv" name="ult_itv" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
@@ -60,7 +61,7 @@
                 <input type="submit" value="Actualizar fecha" />
             </form> 
     </fieldset>
-    <fieldset>
+    <fieldset id="centro" class="col-4">
         <legend>Último repostaje</legend>
         <p><strong>Fecha: </strong> <?php echo $coche['ULTIMO_REPOSTAJE'] ?></p>
         <input type="hidden" id="ult_rep" name="ult_rep" value="<?php echo $coche['ULTIMA_ITV'] ?>"/>
@@ -71,7 +72,7 @@
                 <input type="submit" value="Actualizar fecha"/>
             </form>  
     </fieldset>
-    <fieldset>
+    <fieldset id="derecha" class="col-4">
         <legend>Kilometraje total</legend>
         <p><strong>Kilómetros totales: </strong> <?php echo $coche['KMS'] ?> kilómetros</p>
         <p><strong>Desglose: </strong></p>
