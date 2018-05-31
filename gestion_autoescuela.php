@@ -80,16 +80,16 @@
                     <?php foreach($alumnos as $a){ ?>
                     <option value="<?php echo $a['NUM_ALUM'] ?>"><?php echo $a['NOMBRE'] . " " . $a['APELLIDOS']?></option>
                     <?php } ?>
-                </select>
+                </select><br>
                 Producto:
                 <select name="id_producto" required>
                     <?php foreach($productosActivos as $pa){ ?>
                     <option value="<?php echo $pa['COD_PROD'] ?>"><?php echo $pa['PRODUCTO'] ?></option>
                     <?php } ?>
-                </select>
+                </select><br>
                 Fecha:
                 <input type="date" name="fecha_compra" required />
-                <input id="bot" type="submit" value="Añadir compra" />
+                <input id="bot" type="submit" value="Añadir compra" /><br>
             </form>
         </fieldset>
             <fieldset id="form_f1">
@@ -155,8 +155,8 @@
             <legend id="form_l">Crear nuevo producto</legend>
             <form action="acciones/accion_anadir_producto.php">
                 <p>
-                Nombre del producto: <input type="text" name="nombre_prod" required />
-                Precio del producto: <input type="number" name="precio_prod" value="10" /> € <input id="bot" type="submit" value="Añadir" />
+                Nombre del producto: <input type="text" name="nombre_prod" required /><br>
+                Precio del producto: <input type="number" name="precio_prod" value="10" /> € <input id="bot" type="submit" value="Añadir" /><br>
                 </p>
             </form>
         </fieldset>
@@ -195,14 +195,14 @@
     </fieldset>
     </fieldset>
     <fieldset id="derecha" class="col-6">
-    <fieldset>
+    <fieldset id="form_f">
         <legend id="titulo">Gastos</legend>
         <form action="gestion_autoescuela.php" method="post">
             <p>El total de gastos de <input type="number" name="anyo_consulta" value="<?php echo $anyo ?>" />asciende a <span id="form"><?php echo $gasto_total ?></span>€. <input id="bot" type="submit" value="Cambiar"></p>
         </form>
-        <fieldset>
-            <legend>Seguro de los coches</legend>
-            <a href="anadir/anadir_seguro_coche.php">Añadir cobro seguro coche</a>
+        <fieldset id="form_f1">
+            <legend id="form_l">Seguro de los coches</legend>
+            <a href="anadir/anadir_seguro_coche.php"><img src="images/anadir_gasto.png" title="Añadir seguro del coche"></a>
             <table>
                 <tr>
                     <th class="col-2-5">Matrícula</th>
@@ -227,9 +227,9 @@
                 <?php } ?>
             </table>
         </fieldset>
-        <fieldset>
-            <legend>Seguro del local</legend>
-            <a href="anadir/anadir_seguro_local.php">Añadir cobro seguro local</a>
+        <fieldset id="form_f1">
+            <legend id="form_l">Seguro del local</legend>
+            <a href="anadir/anadir_seguro_local.php"><img src="images/anadir_gasto.png" title="Añadir cobro seguro local"></a>
             <table>
                 <tr>
                     <th class="col-3">Fecha de cobro</th>
@@ -252,9 +252,9 @@
                 <?php } ?>
             </table>
         </fieldset>
-        <fieldset>
-            <legend>Tasas</legend>
-            <a href='anadir/anadir_tasas.php'>Añadir pago de tasas</a>
+        <fieldset id="form_f1">
+            <legend id="form_l">Tasas</legend>
+            <a href='anadir/anadir_tasas.php'><img src="images/anadir_gasto.png" title="Añadir pago de tasas"></a>
             <table>
                 <tr>
                     <th class="col-3">Alumno</th>
@@ -277,9 +277,9 @@
                 <?php } ?>
             </table>
         </fieldset>
-        <fieldset>
-            <legend>Luz</legend>
-            <a href="anadir/anadir_gasto_luz.php">Añadir gasto de luz</a>
+        <fieldset id="form_f1">
+            <legend id="form_l">Luz</legend>
+            <a href="anadir/anadir_gasto_luz.php"><img src="images/anadir_gasto.png" title="Añadir gasto de luz"></a>
             <table>
                 <tr>
                     <th class="col-3">Fecha</th>

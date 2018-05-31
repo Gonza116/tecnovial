@@ -55,24 +55,8 @@ html, body {margin:0; padding:0; height:100%;}
 } */
 
 #datos_alumno {
-    border-color: red;
+    border-color: transparent;
     height: auto;
-}
-
-#clases_teoricas {
-    border-color: yellow;
-}
-
-#examenes {
-    border-color: green;
-}
-
-#clases_practicas {
-    border-color: blueviolet;
-}
-
-#compras {
-    border-color: orange;
 }
 
 #izquierda {
@@ -90,5 +74,56 @@ html, body {margin:0; padding:0; height:100%;}
     float: left;
     padding-right: 1px;
     width: 32.5%;
+}
+
+#form {
+    font-family: "Gothic";
+    font-size: 14.5px;
+}
+
+#bot {
+	background-color: midnightblue;
+	font-size: 15px;
+	color: whitesmoke;
+	border-radius: 5px;
+	font-family: "Candara";
+	border: none;
+	display: inline-block;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+}
+
+#form_f {
+    border-color: transparent;
+}
+
+#form_f1 {
+    background-color: rgb(255, 228, 196, 0.7);
+    color: midnightblue;
+    border-color: transparent;
+    border-radius: 6px;
+}
+
+#form_l {
+    color: #16004a;
+    font-size: 17px;
+    text-shadow: 2px 2px 2px #999999;
+}
+
+#titulo {
+    margin-top: 0px;
+    font-family: "Candara";
+    color: #16004a;
+    font-size: 30px;
+}
+
+#form_fe {
+    border-color: #ff6c00;
+}
+
+#form_fex {
+    color: #16004a;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #999999;
 }
 
