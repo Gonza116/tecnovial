@@ -31,10 +31,10 @@
 <body id="formulario">
     <h1>Añadir alumno</h1>
     <?php if($hayErrores){ ?>
-    <fieldset>
-        <legend>Han ocurrido errores</legend>
+    <fieldset id="errores">
+        <legend id="errores">Han ocurrido errores</legend>
         <?php foreach($errores as $e){ ?>
-        <p><?php echo $e ?></p>
+        <p id="errores"><?php echo $e ?></p>
         <?php } ?>
     </fieldset>
     <?php } 

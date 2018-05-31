@@ -131,3 +131,8 @@ body {
     margin-left: 4px;
     padding-bottom: 2px;
 }
+
+#errores{
+    color: red;
+    border-color: red;
+}

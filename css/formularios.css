@@ -21,10 +21,16 @@ input {
 
 form {
     margin: auto;
-    /* color del formularo */
+    background-color: rgb(255, 228, 196, 0.7);
+    color: midnightblue;
+    border-color: transparent;
+    border-radius: 6px;
 }
 
-
+#errores{
+    color:red;
+    border-color: red;
+}
 
 
 /*div {

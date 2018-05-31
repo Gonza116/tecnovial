@@ -24,10 +24,10 @@
 <body id="formulario">
     <h1>Añadiendo nuevas tasas</h1>
     <?php if($hayErrores){ ?>
-    <fieldset>
-        <legend>Han ocurrido errores</legend>
+    <fieldset id="errores">
+        <legend id="errores">Han ocurrido errores</legend>
         <?php foreach($error as $e){ ?>
-        <p><?php echo $e ?></p>
+        <p id="errores"><?php echo $e ?></p>
         <?php } ?>
     </fieldset>
     <?php } ?>
