@@ -13,6 +13,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/tecnovial/css/exception.css">
     <title>Tecnovial: Error</title>
 </head>
 <body>

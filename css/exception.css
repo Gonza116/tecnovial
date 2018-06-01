@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Candara'; /*a name to be used later*/
+    src: url('../fonts/Candara.ttf'); /*URL to font*/
+}
+
+html {
+    background-image: url(../images/tecno.png);
+    font-family: "Candara";
+}
