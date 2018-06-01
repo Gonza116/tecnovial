@@ -27,6 +27,9 @@
         if(getAge($_REQUEST['fecha_ex_p'], $cump) < 18){
             $error['edad'] = "El alumno no puede ser menor de edad en la fecha del examen";
         }
+        if(DateTime::createFromFormat('d/m/y', $alumno['CAD_TASAS']) < DateTime::createFromFormat('Y-m-d', $_REQUEST['fecha_ex_p'])){
+            $error['tasas'] = "El alumno no puede tener las tasas caducadas el día del examen";
+        }
         if($alumno['OPORTUNIDADES'] <= 0){
             $error['opor'] = "El alumno no puede hacer un examen si no le quedan oportunidades";
         }
